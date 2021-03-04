@@ -1,5 +1,7 @@
+import authReduser from './Auth/authReduser';
 import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { FLUSH,
+import {
+  FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
@@ -19,11 +21,12 @@ const middleware = [
 ];
 
 const authPersistConfig = {
-  key: 'auth',
+  key: 'token',
   storage,
   whitelist: ['token']
 }
 const mainReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReduser)
   // add your reducer
 });
 
