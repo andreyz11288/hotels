@@ -4,6 +4,8 @@
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100vh;
+  min-height: 100%;
   opacity: 0.5;
   background: #222;
   z-index: -1;
@@ -18,10 +20,10 @@
   height: 100vh;
   min-height: 100%;
   /* position: relative; */
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   z-index: -2;
   background: url(/src/img/bg_1.webp) no-repeat;
+  background-size: cover;
 }

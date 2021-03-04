@@ -2,7 +2,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 455px;
+  width: 300px;
   padding: 20px;
   /* border: 2px solid black; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
@@ -10,7 +10,7 @@
 .button {
   margin-top: 10px;
   cursor: pointer;
-  width: 453px;
+  width: 260px;
   height: 30px;
 }
 .button:active {
@@ -33,7 +33,7 @@
 .input {
   display: block;
   border-radius: 5px;
-  width: 445px;
+  width: 260px;
   height: 30px;
 }
 .input:focus {
@@ -42,9 +42,10 @@
   border-color: blue;
 }
 .h1 {
+  padding-top: 150px;
   font-weight: 700;
   color: #fff;
-  font-size: 80px;
+  font-size: 40px;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 50px;

@@ -1,10 +1,8 @@
-
-
 const BestHotels = () => {
- 
-
   return (
-  <h1>BestHotels</h1>   
+    <div>
+      <h1>BestHotels</h1>
+    </div>
   );
 };
 

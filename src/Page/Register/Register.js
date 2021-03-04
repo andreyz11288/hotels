@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import s from './Register.module.css';
-import { useDispatch } from 'react-redux';
-import { registerAuth } from '../../Redux/Auth/authOperation';
+import React, { useState } from "react";
+import s from "./Register.module.css";
+import { useDispatch } from "react-redux";
+import { registerAuth } from "../../Redux/Auth/authOperation";
 
 const Register = () => {
   const dispftch = useDispatch();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const nameFunc = e => setName(e.target.value);
-  const emailFunc = e => setEmail(e.target.value);
-  const passwordFunc = e => setPassword(e.target.value);
+  const nameFunc = (e) => setName(e.target.value);
+  const emailFunc = (e) => setEmail(e.target.value);
+  const passwordFunc = (e) => setPassword(e.target.value);
 
-  const btnClick = e => {
+  const btnClick = (e) => {
     e.preventDefault();
     dispftch(registerAuth({ name, email, password }));
-    setName('');
-    setPassword('');
-    setEmail('');
+    setName("");
+    setPassword("");
+    setEmail("");
   };
 
   return (
@@ -29,9 +29,9 @@ const Register = () => {
           Логин
           <input
             className={s.input}
-            type="text"
+            type='text'
             value={name}
-            placeholder="Введите логин"
+            placeholder='Введите логин'
             onChange={nameFunc}
           />
         </label>
@@ -40,9 +40,9 @@ const Register = () => {
           Почта
           <input
             className={s.input}
-            type="text"
+            type='text'
             value={email}
-            placeholder="Введите почту"
+            placeholder='Введите почту'
             onChange={emailFunc}
           />
         </label>
@@ -51,14 +51,14 @@ const Register = () => {
           Пароль
           <input
             className={s.input}
-            type="password"
+            type='password'
             value={password}
-            placeholder="Введите пароль"
+            placeholder='Введите пароль'
             onChange={passwordFunc}
           />
         </label>
         <br />
-        <button type="submit" className={s.button}>
+        <button type='submit' className={s.button}>
           Зарегистрироваться
         </button>
       </form>
