@@ -1,0 +1,39 @@
+// Colors
+
+$main-color: #c5a880;
+$white-color: #ffffff;
+$hover-color: #222222;
+$text-color: rgba(0, 0, 0, 0.8);
+$little-text-color: #999;
+
+// Иконки и прочие картинки размещаем на хостинге ibb.com
+// Fonts
+
+// 400/700 font weight
+$oldStandart: "Old Standard TT", serif;
+
+// 400/600/700 font weight
+$nunito: "Nunito", sans-serif;
+
+//Throws
+%text-throw {
+  margin: 0;
+}
+%list-throw {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+%link-throw {
+  display: block;
+  text-decoration: none;
+}
+%button-throw {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+%input-throw {
+  outline: none;
+  border: none;
+}
