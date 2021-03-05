@@ -28,6 +28,14 @@ const ModalApp = () => {
           >
             Home
           </NavLink>
+          <NavLink
+            exact
+            to='/team'
+            className={s.link}
+            activeClassName={s.navLinkactive}
+          >
+            Team
+          </NavLink>
           {isAuthenticated ? (
             <>
               {" "}

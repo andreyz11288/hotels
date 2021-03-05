@@ -20,7 +20,16 @@ function NavBar() {
             Home
           </NavLink>
         </li>
-
+        <li className={s.li}>
+          <NavLink
+            exact
+            to='/team'
+            className={s.navLink}
+            activeClassName={s.navLinkactive}
+          >
+            Team
+          </NavLink>
+        </li>
         {isLoggedIn && (
           <>
             <li className={s.li}>

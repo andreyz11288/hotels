@@ -22,6 +22,9 @@ const BestHotels = lazy(() =>
 const MyCabinet = lazy(() =>
   import("./Page/MyCabinet/MyCabinet" /*webpackChunkName: "MyCabinet"*/)
 );
+const Team = lazy(() =>
+  import("./Page/Team/Team" /*webpackChunkName: "MyCabinet"*/)
+);
 
 const App = ({ onRefresh }) => {
   const dispatch = useDispatch();
@@ -41,6 +44,7 @@ const App = ({ onRefresh }) => {
         <Suspense fallback={<h1>Lodding...</h1>}>
           <Switch>
             <Route exact path='/' component={HomePage} />
+            <Route  path='/team' component={Team} />
             <PrivateRoute
               path='/bestHotels'
               component={BestHotels}
