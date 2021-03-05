@@ -1,3 +1,120 @@
+@import '../../utils/utils.scss';
+
 .hotels {
-  padding-top: 500px;
+  @media screen and (min-width: 320px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  &List {
+    @extend %list-throw;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 320px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+    }
+  }
+  &ListItem {
+    font-family: $nunito;
+  }
+}
+.ItemInner {
+  height: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color $animation-timing;
+  & h3 {
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: $oldStandart;
+    color: $text-color;
+    transition: color $animation-timing;
+  }
+  & p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: $little-text-color;
+    text-align: center;
+  }
+}
+.buttonInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  & span {
+    text-transform: uppercase;
+    color: $main-color;
+    margin-right: 15px;
+  }
+  & button {
+    @extend %button-throw;
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-color;
+    transition: $animation-timing;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+.hotelsListItem:hover,
+.hotelsListItem:focus {
+  .hotelsListItemImageContainer::before {
+    opacity: 0.5;
+  }
+  .ItemInner {
+    background-color: $hover-color;
+    & h3 {
+      color: $white-color;
+    }
+    & button {
+      color: $white-color;
+      border: 1px solid $main-color;
+    }
+  }
+}
+.hotelsListItemImageContainer {
+  position: relative;
+  height: 50%;
+}
+.hotelsListItemImageContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $text-color;
+  opacity: 0;
+  transition: opacity $animation-timing;
+}
+.hotelsListItemImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

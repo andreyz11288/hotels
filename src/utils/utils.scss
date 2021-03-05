@@ -6,14 +6,15 @@ $hover-color: #222222;
 $text-color: rgba(0, 0, 0, 0.8);
 $little-text-color: #999;
 
+$animation-timing: 300ms ease-in;
 // Иконки и прочие картинки размещаем на хостинге ibb.com
 // Fonts
 
 // 400/700 font weight
-$oldStandart: "Old Standard TT", serif;
+$oldStandart: 'Old Standard TT', serif;
 
 // 400/600/700 font weight
-$nunito: "Nunito", sans-serif;
+$nunito: 'Nunito', sans-serif;
 
 //Throws
 %text-throw {

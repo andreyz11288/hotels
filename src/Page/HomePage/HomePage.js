@@ -6,10 +6,11 @@ import Hotels from '../../Components/Hotels/Hotels';
 
 const HomePage = () => {
   const isLogin = useSelector(getIsAutheticated);
-  return (
-    <div className={s.div}>
-      <Hotels/>
+  return (    
+    <>
+       <Hotels/>
       {!isLogin && (
+    <div className={s.div}>
         <p className={s.p}>
           Пожалуйста &nbsp;
           <NavLink className={s.navLogo} to='/login'>
@@ -22,8 +23,9 @@ const HomePage = () => {
           </NavLink>
           .
         </p>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

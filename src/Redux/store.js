@@ -1,4 +1,5 @@
 import authReduser from './Auth/authReduser';
+import hotelsReducer from './Hotels/HotelsReducer/hotelsReducer';
 import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
   FLUSH,
@@ -26,8 +27,8 @@ const authPersistConfig = {
   whitelist: ['token']
 }
 const mainReducer = combineReducers({
-  auth: persistReducer(authPersistConfig, authReduser)
-  // add your reducer
+  auth: persistReducer(authPersistConfig, authReduser),
+  booking: hotelsReducer,
 });
 
 const store = configureStore({ reducer: mainReducer, middleware, devTools: process.env.NODE_ENV === 'development' });
