@@ -2,12 +2,13 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getIsAutheticated } from "../../Redux/Auth/authSelectors";
 import s from "./HomePage.module.css";
+import Hotels from '../../Components/Hotels/Hotels';
 
 const HomePage = () => {
   const isLogin = useSelector(getIsAutheticated);
   return (
     <div className={s.div}>
-      <h1 className={s.h1}>Most Relaxing Place</h1>
+      <Hotels/>
       {!isLogin && (
         <p className={s.p}>
           Пожалуйста &nbsp;
