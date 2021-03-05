@@ -4,10 +4,32 @@ import { useSelector } from "react-redux";
 import UserMenu from "../UserMenu/UserMenu";
 
 import { getIsAutheticated } from "../../../Redux/Auth/authSelectors";
+import { useEffect } from "react";
+
 
 const ModalApp = () => {
   const isAuthenticated = useSelector(getIsAutheticated);
-
+  
+  
+  useEffect(() => {
+    document.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL') {      
+      const qq = document.querySelector('#checkMenu')      
+      if (qq.checked) {
+        qq.checked = false
+      }      
+    }
+    })
+    return  document.removeEventListener('click', (e) => {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL') {      
+        var qq = document.querySelector('#checkMenu')
+      if (qq.checked) {
+        qq.checked = false
+      }      
+    }
+    })
+  },[])
+  
   return (
     <>
       <div className={s.wrapper}>
@@ -38,7 +60,6 @@ const ModalApp = () => {
           </NavLink>
           {isAuthenticated ? (
             <>
-              {" "}
               <NavLink
                 to='/bestHotels'
                 className={s.link}
