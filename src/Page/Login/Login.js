@@ -1,35 +1,41 @@
-import React, { useState } from "react";
-import s from "./Login.module.css";
-import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { loginAuth } from "../../Redux/Auth/authOperation";
+import React, { useState } from 'react';
+import s from './Login.module.css';
+import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { loginAuth } from '../../Redux/Auth/authOperation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// toast.configure();
+// const notify = () => toast.error('incorrect username or password!');
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const emailFunc = (e) => setEmail(e.target.value);
-  const passwordFunc = (e) => setPassword(e.target.value);
+  const emailFunc = e => setEmail(e.target.value);
+  const passwordFunc = e => setPassword(e.target.value);
 
-  const btnClick = (e) => {
+  const btnClick = e => {
     e.preventDefault();
     dispatch(loginAuth({ email, password }));
-    setEmail("");
-    setPassword("");
+    setEmail('');
+    setPassword('');
   };
 
   return (
     <>
+      <ToastContainer />
       <h1 className={s.h1}>Aвторизация</h1>
       <form className={s.form} onSubmit={btnClick}>
         <label className={s.label}>
           Почта
           <input
             className={s.input}
-            type='text'
+            type="text"
             value={email}
-            placeholder='Введите почту'
+            placeholder="Введите почту"
             onChange={emailFunc}
           />
         </label>
@@ -38,14 +44,14 @@ const Login = () => {
           Пароль
           <input
             className={s.input}
-            type='password'
+            type="password"
             value={password}
-            placeholder='Введите пароль'
+            placeholder="Введите пароль"
             onChange={passwordFunc}
           />
         </label>
         <br />
-        <button type='submit' className={s.button}>
+        <button type="submit" className={s.button}>
           Войти
         </button>
       </form>
@@ -53,7 +59,7 @@ const Login = () => {
         Ещё нет учётной записи? &nbsp;
         <NavLink
           exact
-          to='/register'
+          to="/register"
           className={s.navLink}
           activeClassName={s.navLinkactive}
         >

@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
-import s from "./UserMenu.module.css";
-import { useDispatch } from "react-redux";
-import { logOutAuth } from "../../../Redux/Auth/authOperation";
+import React, { useCallback } from 'react';
+import s from './UserMenu.module.scss';
+import { useDispatch } from 'react-redux';
+import { logOutAuth } from '../../../Redux/Auth/authOperation';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const UserMenu = () => {
 
   return (
     <div className={s.divUser}>
-      <button className={s.button} type='button' onClick={onLogout}>
+      <button className={s.button} type="button" onClick={onLogout}>
         Exit
       </button>
     </div>

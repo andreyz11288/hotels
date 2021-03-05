@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import NavBar from "../NavBar/NavBar";
 import Navigation from "../Navigation/Navigation";
 import UserMenu from "../UserMenu/UserMenu";
-import s from "./AppBar.module.css";
+import s from "./AppBar.module.scss";
 import { NavLink } from "react-router-dom";
 import { getIsAutheticated } from "../../../Redux/Auth/authSelectors";
 import ModalApp from "./ModalApp";
