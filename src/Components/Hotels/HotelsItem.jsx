@@ -28,7 +28,7 @@ export default function HotelsItem({ apartments }) {
               <p>{title}</p>
               <p>Rating: {rating}</p>
               <div className={styles.buttonInner}>
-                <span>Price: ${price}/Night</span>
+                <span>Price: ₴ {price}/Night</span>
                 <button>Book Now</button>
               </div>
             </div>
