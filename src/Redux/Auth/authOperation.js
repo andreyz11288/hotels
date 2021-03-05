@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   loginStart,
@@ -28,13 +28,16 @@ const token = {
 };
 
 const registerAuth = credentials => async dispatch => {
+  const notify = text => toast.error(text);
   dispatch(registerStart());
   try {
     const response = await axios.post('/users/register', credentials);
-    console.log(response);
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
+    console.log(error);
+
+    notify(error.message);
     dispatch(registerError(error.message));
   }
 };

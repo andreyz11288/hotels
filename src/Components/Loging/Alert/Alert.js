@@ -3,9 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
+const notify = () => toast.error('incorrect username or password!');
 
 export default function Alert() {
-  const notify = () => toast.error('incorrect username or password!');
-
   return notify;
 }
