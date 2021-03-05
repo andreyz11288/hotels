@@ -1,0 +1,49 @@
+.navLink {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 50%;
+}
+.navLinkactive {
+  font-size: 18px;
+  color: red;
+}
+
+.ul {
+  /* position: absolute;
+  right: 20px; */
+  list-style-type: none;
+  display: flex;
+  /* border-bottom: 2px solid darkgrey; */
+  margin: 0px;
+  padding: 20px 20px 20px 20px;
+}
+.ul :not(:first-child) {
+  margin-left: 20px;
+}
+.button {
+  background: none;
+  /* padding: 0px; */
+  /* text-decoration: none; */
+  border: none;
+  cursor: pointer;
+  /* font-size: 18px; */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+  font-size: 13px;
+  /* padding-top: 1.2rem; */
+  /* padding-bottom: 1.2rem; */
+  /* padding-left: 25px; */
+  /* padding-right: 25px; */
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* margin-right: 100px; */
+}
+.divUser {
+  margin-top: auto;
+  margin-bottom: auto;
+}
