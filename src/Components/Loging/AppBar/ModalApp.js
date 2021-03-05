@@ -35,7 +35,7 @@ const ModalApp = () => {
       <div className={s.wrapper}>
         <input type='checkbox' id='checkMenu' className={s.checkMenu} />
         <label className={s.labelCheck} htmlFor='checkMenu'>
-          Menu
+          <span className={s.spanCheck}>Menu</span>
         </label>
         <div className={s.burgerLineFirst}></div>
         <div className={s.burgerLineSecond}></div>

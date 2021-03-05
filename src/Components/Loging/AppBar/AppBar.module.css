@@ -1,10 +1,12 @@
 .nav {
-  position: relative;
+  width: 100%;
+  padding-top: 10px;
+  /* position: relative; */
   /* border-bottom: 2px solid darkgrey; */
-  display: flex;
+  /* display: flex; */
 }
 .header {
-  /* position: fixed; */
+  position: relative;
   width: 100%;
   border-bottom: 2px solid darkgrey;
   display: flex;
