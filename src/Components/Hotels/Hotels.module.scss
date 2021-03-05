@@ -53,6 +53,7 @@
     padding: 50px;
   }
   & h3 {
+    @extend %text-throw;
     font-size: 30px;
     line-height: 1.5;
     font-family: $oldStandart;
@@ -60,6 +61,7 @@
     transition: color $animation-timing;
   }
   & p {
+    @extend %text-throw;
     line-height: 1.8;
     color: $little-text-color;
     text-align: center;
@@ -76,6 +78,7 @@
   align-items: center;
   justify-content: space-around;
   & span {
+    @extend %text-throw;
     text-transform: uppercase;
     color: $main-color;
     margin-right: 15px;
