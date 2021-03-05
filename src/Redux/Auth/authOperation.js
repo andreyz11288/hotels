@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   loginStart,
   loginSuccess,
@@ -38,12 +40,14 @@ const registerAuth = credentials => async dispatch => {
 };
 
 const loginAuth = credentials => async dispatch => {
+  const notify = () => toast.error('incorrect username or password!');
   dispatch(loginStart());
   try {
     const response = await axios.post('/users/login', credentials);
     token.set(response.data.token);
     dispatch(loginSuccess(response.data));
   } catch (error) {
+    notify();
     dispatch(loginError(error.message));
   }
 };
@@ -75,6 +79,5 @@ const getCurrentUser = () => async (dispatch, getState) => {
     dispatch(getCurrentUserError(error.message));
   }
 };
-
 
 export { registerAuth, loginAuth, logOutAuth, getCurrentUser };

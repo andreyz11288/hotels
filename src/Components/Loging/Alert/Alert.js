@@ -1,9 +1,11 @@
-import s from './Alert.module.css';
+// import s from './Alert.module.scss';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function Alert({ massage }) {
-  return (
-    <div className={s.div}>
-      <h3 className={s.h1}>{massage}</h3>
-    </div>
-  );
+toast.configure();
+
+export default function Alert() {
+  const notify = () => toast.error('incorrect username or password!');
+
+  return notify;
 }

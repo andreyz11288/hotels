@@ -24,26 +24,31 @@
 }
 .button {
   background: none;
-  /* padding: 0px; */
-  /* text-decoration: none; */
   border: none;
   cursor: pointer;
-  /* font-size: 18px; */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
-  font-size: 13px;
-  /* padding-top: 1.2rem; */
-  /* padding-bottom: 1.2rem; */
-  /* padding-left: 25px; */
-  /* padding-right: 25px; */
   color: rgba(255, 255, 255, 0.9);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  /* margin-right: 100px; */
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 13px;
+  }
 }
 .divUser {
   margin-top: auto;
   margin-bottom: auto;
+  @media screen and (min-width: 768px) {
+    margin-right: 25px;
+    margin-left: 10px;
+  }
+  @media screen and (min-width: 1280px) {
+    // margin-right: 25px;
+    margin-left: 25px;
+  }
 }

@@ -1,8 +1,8 @@
-import React from "react";
-import { getIsAutheticated } from "../../../Redux/Auth/authSelectors";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import s from "./NavBar.module.css";
+import React from 'react';
+import { getIsAutheticated } from '../../../Redux/Auth/authSelectors';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import s from './NavBar.module.scss';
 
 function NavBar() {
   const isLoggedIn = useSelector(getIsAutheticated);
@@ -13,28 +13,19 @@ function NavBar() {
         <li className={s.li}>
           <NavLink
             exact
-            to='/'
+            to="/"
             className={s.navLink}
             activeClassName={s.navLinkactive}
           >
             Home
           </NavLink>
         </li>
-        <li className={s.li}>
-          <NavLink
-            exact
-            to='/team'
-            className={s.navLink}
-            activeClassName={s.navLinkactive}
-          >
-            Team
-          </NavLink>
-        </li>
+
         {isLoggedIn && (
           <>
             <li className={s.li}>
               <NavLink
-                to='/bestHotels'
+                to="/bestHotels"
                 className={s.navLink}
                 activeClassName={s.navLinkactive}
               >
@@ -43,7 +34,7 @@ function NavBar() {
             </li>
             <li className={s.li}>
               <NavLink
-                to='/myCabinet'
+                to="/myCabinet"
                 className={s.navLink}
                 activeClassName={s.navLinkactive}
               >
@@ -52,6 +43,16 @@ function NavBar() {
             </li>
           </>
         )}
+        <li className={s.li}>
+          <NavLink
+            exact
+            to="/team"
+            className={s.navLink}
+            activeClassName={s.navLinkactive}
+          >
+            Team
+          </NavLink>
+        </li>
       </ul>
     </>
   );

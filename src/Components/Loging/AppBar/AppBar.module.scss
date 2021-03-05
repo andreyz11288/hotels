@@ -10,7 +10,10 @@
   width: 100%;
   border-bottom: 2px solid darkgrey;
   display: flex;
-  background: #222 !important;
+  background: #222;
+  @media screen and (min-width: 768px) {
+    background: none;
+  }
 }
 .span {
   font-size: 13px;
@@ -47,5 +50,10 @@
   padding-left: 10px;
 }
 .divNav {
-  display: none;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 }

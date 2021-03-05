@@ -1,9 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 .wrapper {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
   /* position: absolute; */
   width: 100%;
   /* float: right; */
@@ -39,6 +37,9 @@
   height: 2px;
   background-color: #fff;
   transition: 0.5s all;
+  // @media screen and (min-width: 768px) {
+  //   right: 140px;
+  // }
 }
 .burgerLineSecond,
 .burgerLineThird {
@@ -48,6 +49,7 @@
   top: 45px;
 }
 .mainMenu {
+  z-index: 10;
   display: block;
   position: absolute;
   width: 100%;
@@ -63,6 +65,7 @@
   display: block;
   width: 100%;
   padding: 10px;
+  text-align: center;
   color: white;
   text-decoration: none;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -88,4 +91,7 @@
   float: right;
   padding-top: 25px;
   padding-right: 10px;
+  // @media screen and (min-width: 768px) {
+  //   padding-right: 80px;
+  // }
 }
