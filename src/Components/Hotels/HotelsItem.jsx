@@ -4,6 +4,8 @@ import Rating from './Rating';
 import selectors from '../../Redux/Hotels/HotelsSelectors/hotelsSelectors';
 import { useSelector } from 'react-redux';
 import LazyLoad from 'react-lazy-load';
+import { CSSTransition } from 'react-transition-group';
+
 export default function HotelsItem() {
   const visibleApartments = useSelector(
     selectors.getVisibleApartments,
@@ -20,34 +22,44 @@ export default function HotelsItem() {
           title,
         } = apartment;
         return (
-          <li className={styles.hotelsListItem} key={id}>
-            <div className={styles.hotelsListItemImageContainer}>
-              <LazyLoad height="100%" offsetVertical={50}>
-                <img
-                  className={styles.hotelsListItemImage}
-                  src={imgUrl}
-                  alt="room"
-                />
-              </LazyLoad>
-            </div>
-
-            <div className={styles.ItemInner}>
-              <h3>{location.city}</h3>
-              <p>{title}</p>
-              <p>
-                Rating: <Rating rating={rating} />
-              </p>
-              <div className={styles.buttonInner}>
-                <p>Price: ₴ {price}/Night</p>
-                <Link
-                  className={styles.button}
-                  to={`/apartments/${id}`}
-                >
-                  Book Now
-                </Link>
+          <CSSTransition
+            key={id}
+            in={true}
+            appear={true}
+            timeout={500}
+            classNames={styles}
+            unmountOnExit
+          >
+            <li className={styles.hotelsListItem} key={id}>
+              <div className={styles.hotelsListItemImageContainer}>
+                <LazyLoad height="100%" offsetVertical={50}>
+                  <img
+                    className={styles.hotelsListItemImage}
+                    src={imgUrl}
+                    alt="room"
+                    height="300"
+                  />
+                </LazyLoad>
               </div>
-            </div>
-          </li>
+
+              <div className={styles.ItemInner}>
+                <h3>{location.city}</h3>
+                <p>{title}</p>
+                <p>
+                  Rating: <Rating rating={rating} />
+                </p>
+                <div className={styles.buttonInner}>
+                  <p>Price: ₴ {price}/Night</p>
+                  <Link
+                    className={styles.button}
+                    to={`/apartments/${id}`}
+                  >
+                    Book Now
+                  </Link>
+                </div>
+              </div>
+            </li>
+          </CSSTransition>
         );
       })}
     </>

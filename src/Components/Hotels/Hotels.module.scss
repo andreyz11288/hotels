@@ -141,3 +141,108 @@
   object-fit: cover;
   object-position: center;
 }
+.filterContainer {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: left;
+  }
+  &List {
+    @extend %list-throw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &Label {
+    @media screen and (min-width: 320px) {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      width: unset;
+      &:not(:last-child) {
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
+    }
+
+    & input {
+      @extend %input-throw;
+      border: 2px solid $hover-color;
+      border-radius: 5px;
+      transition: border $animation-timing;
+      color: $main-color;
+      font-size: 16px;
+      text-align: center;
+      &:focus {
+        border: 2px solid $main-color;
+      }
+      @media screen and (min-width: 320px) {
+        padding: 5px;
+      }
+      @media screen and (min-width: 768px) {
+        padding: 10px;
+      }
+      @media screen and (min-width: 1280px) {
+        width: 300px;
+        padding: 10px;
+        font-size: 20px;
+      }
+    }
+    & span {
+      color: $text-color;
+      text-transform: uppercase;
+      font-weight: 700;
+      @media screen and (min-width: 320px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.appear {
+  transform: translateY(-100%);
+  opacity: 0.1;
+}
+.appearActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.enter {
+  transform: translateY(-100%);
+  opacity: 0.1;
+}
+.enterActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+.exitActive {
+  transform: translateY(-100%);
+  opacity: 0.1;
+  transition: all 500ms ease-in;
+}
