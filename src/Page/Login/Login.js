@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import s from './Login.module.css';
+import s from './Login.module.scss';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { loginAuth } from '../../Redux/Auth/authOperation';
@@ -25,48 +25,50 @@ const Login = () => {
   };
 
   return (
-    <>
+    <section className={s.sectionLogin}>
+      <div className={s.bacground}></div>
+      <div className={s.overley}></div>
       <ToastContainer />
-      <h1 className={s.h1}>Aвторизация</h1>
-      <form className={s.form} onSubmit={btnClick}>
-        <label className={s.label}>
-          Почта
+      <h1 className={s.loginH1}>Login</h1>
+      <form className={s.loginForm} onSubmit={btnClick}>
+        <label className={s.loginLabel}>
+          Email
           <input
-            className={s.input}
+            className={s.loginInput}
             type="text"
             value={email}
-            placeholder="Введите почту"
+            placeholder="Enter email"
             onChange={emailFunc}
           />
         </label>
 
-        <label className={s.label}>
-          Пароль
+        <label className={s.loginLabel}>
+          Password
           <input
-            className={s.input}
+            className={s.loginInput}
             type="password"
             value={password}
-            placeholder="Введите пароль"
+            placeholder="Enter password"
             onChange={passwordFunc}
           />
         </label>
         <br />
-        <button type="submit" className={s.button}>
-          Войти
+        <button type="submit" className={s.loginButton}>
+          Login
         </button>
       </form>
-      <p className={s.p}>
-        Ещё нет учётной записи? &nbsp;
+      <p className={s.loginP}>
+        No account yet? &nbsp;
         <NavLink
           exact
           to="/register"
-          className={s.navLink}
-          activeClassName={s.navLinkactive}
+          className={s.loginNavLink}
+          activeClassName={s.loginNavLinkactive}
         >
-          Зарегистрируйтесь
+          Register
         </NavLink>
       </p>
-    </>
+    </section>
   );
   // }
 };

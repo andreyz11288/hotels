@@ -10,8 +10,12 @@ const UserMenu = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.divUser}>
-      <button className={s.button} type="button" onClick={onLogout}>
+    <div className={s.divUserMenu}>
+      <button
+        className={s.userMenuButton}
+        type="button"
+        onClick={onLogout}
+      >
         Exit
       </button>
     </div>

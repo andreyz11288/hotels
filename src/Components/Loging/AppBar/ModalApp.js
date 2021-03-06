@@ -50,17 +50,26 @@ const ModalApp = () => {
         <div className={s.burgerLineThird}></div>
         <div className={s.burgerLineFourth}></div>
         <nav className={s.mainMenu}>
-          <NavLink
-            exact
-            to="/"
-            className={s.link}
-            activeClassName={s.navLinkactive}
-          >
-            Home
-          </NavLink>
+          {!isAuthenticated && (
+            <NavLink
+              exact
+              to="/"
+              className={s.link}
+              activeClassName={s.navLinkactive}
+            >
+              Home
+            </NavLink>
+          )}
 
           {isAuthenticated ? (
             <>
+              <NavLink
+                to="/apartments"
+                className={s.link}
+                activeClassName={s.navLinkactive}
+              >
+                Apartments
+              </NavLink>
               <NavLink
                 to="/bestHotels"
                 className={s.link}

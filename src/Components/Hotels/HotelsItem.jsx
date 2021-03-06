@@ -41,7 +41,6 @@ export default function HotelsItem() {
                   />
                 </LazyLoad>
               </div>
-
               <div className={styles.ItemInner}>
                 <h3>{location.city}</h3>
                 <p>{title}</p>

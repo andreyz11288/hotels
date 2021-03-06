@@ -9,46 +9,57 @@ function NavBar() {
 
   return (
     <>
-      <ul className={s.ul}>
-        <li className={s.li}>
-          <NavLink
-            exact
-            to="/"
-            className={s.navLink}
-            activeClassName={s.navLinkactive}
-          >
-            Home
-          </NavLink>
-        </li>
+      <ul className={s.navBarUl}>
+        {!isLoggedIn && (
+          <li className={s.navBarLi}>
+            <NavLink
+              exact
+              to="/"
+              className={s.navBarLink}
+              activeClassName={s.navBarLinkactive}
+            >
+              Home
+            </NavLink>
+          </li>
+        )}
 
         {isLoggedIn && (
           <>
-            <li className={s.li}>
+            <li className={s.navBarLi}>
+              <NavLink
+                to="/apartments"
+                className={s.navBarLink}
+                activeClassName={s.navBarLinkactive}
+              >
+                Apartments
+              </NavLink>
+            </li>
+            <li className={s.navBarLi}>
               <NavLink
                 to="/bestHotels"
-                className={s.navLink}
-                activeClassName={s.navLinkactive}
+                className={s.navBarLink}
+                activeClassName={s.navBarLinkactive}
               >
                 Best Hotels
               </NavLink>
             </li>
-            <li className={s.li}>
+            <li className={s.navBarLi}>
               <NavLink
                 to="/myCabinet"
-                className={s.navLink}
-                activeClassName={s.navLinkactive}
+                className={s.navBarLink}
+                activeClassName={s.navBarLinkactive}
               >
                 My cabinet
               </NavLink>
             </li>
           </>
         )}
-        <li className={s.li}>
+        <li className={s.navBarLi}>
           <NavLink
             exact
             to="/team"
-            className={s.navLink}
-            activeClassName={s.navLinkactive}
+            className={s.navBarLink}
+            activeClassName={s.navBarLinkactive}
           >
             Team
           </NavLink>

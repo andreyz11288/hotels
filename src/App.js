@@ -1,12 +1,12 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import AppBar from './Components/Loging/AppBar/AppBar';
 import { getCurrentUser } from './Redux/Auth/authOperation';
 import PrivateRoute from './Components/Loging/PrivateRoute';
 import PublicRoute from './Components/Loging/PublicRoute';
 import s from './App.module.scss';
-
+import { getIsAutheticated } from './Redux/Auth/authSelectors';
 
 const HomePage = lazy(() =>
   import('./Page/HomePage/HomePage' /*webpackChunkName: "HomePage"*/),
@@ -28,11 +28,22 @@ const MyCabinet = lazy(() =>
   ),
 );
 const Team = lazy(() =>
-  import('./Page/Team/Team' /*webpackChunkName: "MyCabinet"*/),
+  import('./Page/Team/Team' /*webpackChunkName: "Team"*/),
+);
+const Apartments = lazy(() =>
+  import(
+    './Page/Apartments/Apartments' /*webpackChunkName: "Apartments"*/
+  ),
+);
+const ApartmentsDetals = lazy(() =>
+  import(
+    './Page/ApartmentsDetals/ApartmentsDetals' /*webpackChunkName: "ApartmentsDetals"*/
+  ),
 );
 
 const App = ({ onRefresh }) => {
   const dispatch = useDispatch();
+  const isLogin = useSelector(getIsAutheticated);
 
   useEffect(() => {
     dispatch(getCurrentUser());
@@ -41,20 +52,35 @@ const App = ({ onRefresh }) => {
   return (
     <>
       <header className={s.header}>
-        <div className={s.main}></div>
-        <div className={s.overley}></div>
         <AppBar />
       </header>
       <main>
         <Suspense fallback={<h1>Lodding...</h1>}>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <PublicRoute
+              exact
+              path="/"
+              restricted
+              redirectTo="/apartments"
+              component={HomePage}
+            />
+            {/* <Route exact path="/" component={HomePage} /> */}
             <Route path="/team" component={Team} />
+            <PrivateRoute
+              path="/apartments/:id"
+              component={ApartmentsDetals}
+              redirectTo="/login"
+            />
+            <PrivateRoute
+              path="/apartments"
+              component={Apartments}
+              redirectTo="/login"
+            />
             <PrivateRoute
               path="/bestHotels"
               component={BestHotels}
               redirectTo="/login"
-            />            
+            />
             <PrivateRoute
               path="/myCabinet"
               component={MyCabinet}
@@ -63,16 +89,20 @@ const App = ({ onRefresh }) => {
             <PublicRoute
               path="/login"
               restricted
-              redirectTo="/"
+              redirectTo="/apartments"
               component={Login}
             />
             <PublicRoute
               path="/register"
               restricted
-              redirectTo="/"
+              redirectTo="/apartments"
               component={Register}
             />
-            <Route component={HomePage} />
+            {!isLogin ? (
+              <Route component={HomePage} />
+            ) : (
+              <Route component={Apartments} />
+            )}
           </Switch>
         </Suspense>
       </main>

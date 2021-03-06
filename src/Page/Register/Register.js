@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import s from './Register.module.css';
+import s from './Register.module.scss';
 import { useDispatch } from 'react-redux';
 import { registerAuth } from '../../Redux/Auth/authOperation';
 import { ToastContainer } from 'react-toastify';
@@ -25,44 +25,46 @@ const Register = () => {
 
   return (
     <>
+      <div className={s.bacground}></div>
+      <div className={s.overley}></div>
       <ToastContainer />
-      <h1 className={s.h1}>Регистрация</h1>
-      <form className={s.form} onSubmit={btnClick}>
-        <label className={s.label}>
-          Логин
+      <h1 className={s.registerH1}>Register</h1>
+      <form className={s.registerForm} onSubmit={btnClick}>
+        <label className={s.registerLabel}>
+          Login
           <input
-            className={s.input}
+            className={s.registerInput}
             type="text"
             value={name}
-            placeholder="Введите логин"
+            placeholder="Enter login"
             onChange={nameFunc}
           />
         </label>
 
-        <label className={s.label}>
-          Почта
+        <label className={s.registerLabel}>
+          Email
           <input
-            className={s.input}
+            className={s.registerInput}
             type="text"
             value={email}
-            placeholder="Введите почту"
+            placeholder="Enter email"
             onChange={emailFunc}
           />
         </label>
 
-        <label className={s.label}>
-          Пароль
+        <label className={s.registerLabel}>
+          Password
           <input
-            className={s.input}
+            className={s.registerInput}
             type="password"
             value={password}
-            placeholder="Введите пароль"
+            placeholder="Enter password"
             onChange={passwordFunc}
           />
         </label>
         <br />
-        <button type="submit" className={s.button}>
-          Зарегистрироваться
+        <button type="submit" className={s.registerButton}>
+          Register
         </button>
       </form>
     </>

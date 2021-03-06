@@ -4,7 +4,7 @@ import s from './Navigation.module.scss';
 
 export default function Navigation() {
   return (
-    <ul className={s.ul}>
+    <ul className={s.navUl}>
       <li>
         <NavLink
           to="/login"
