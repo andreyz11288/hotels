@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import s from './Register.module.css';
 import { useDispatch } from 'react-redux';
 import { registerAuth } from '../../Redux/Auth/authOperation';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {

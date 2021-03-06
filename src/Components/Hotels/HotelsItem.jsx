@@ -1,10 +1,16 @@
+import { Link } from 'react-router-dom';
 import styles from './Hotels.module.scss';
-import LazyLoad from 'react-lazyload';
-
-export default function HotelsItem({ apartments }) {
+import Rating from './Rating';
+import selectors from '../../Redux/Hotels/HotelsSelectors/hotelsSelectors';
+import { useSelector } from 'react-redux';
+import LazyLoad from 'react-lazy-load';
+export default function HotelsItem() {
+  const visibleApartments = useSelector(
+    selectors.getVisibleApartments,
+  );
   return (
     <>
-      {apartments.map(apartment => {
+      {visibleApartments.map(apartment => {
         const {
           id,
           imgUrl,
@@ -16,20 +22,29 @@ export default function HotelsItem({ apartments }) {
         return (
           <li className={styles.hotelsListItem} key={id}>
             <div className={styles.hotelsListItemImageContainer}>
-              <img
-                className={styles.hotelsListItemImage}
-                src={imgUrl}
-                alt="room"
-              />
+              <LazyLoad height="100%" offsetVertical={50}>
+                <img
+                  className={styles.hotelsListItemImage}
+                  src={imgUrl}
+                  alt="room"
+                />
+              </LazyLoad>
             </div>
 
             <div className={styles.ItemInner}>
               <h3>{location.city}</h3>
               <p>{title}</p>
-              <p>Rating: {rating}</p>
+              <p>
+                Rating: <Rating rating={rating} />
+              </p>
               <div className={styles.buttonInner}>
-                <span>Price: ₴ {price}/Night</span>
-                <button>Book Now</button>
+                <p>Price: ₴ {price}/Night</p>
+                <Link
+                  className={styles.button}
+                  to={`/apartments/${id}`}
+                >
+                  Book Now
+                </Link>
               </div>
             </div>
           </li>

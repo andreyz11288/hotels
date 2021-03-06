@@ -10,7 +10,6 @@ const getAllHotels = () => dispatch => {
     .then(({ data }) => dispatch(actions.getHotelsSuccess(data)))
     .catch(error => dispatch(actions.getHotelsError(error.message)));
 };
-
 const exported = {
   getAllHotels,
 };

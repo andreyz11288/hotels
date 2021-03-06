@@ -7,6 +7,7 @@ import PrivateRoute from './Components/Loging/PrivateRoute';
 import PublicRoute from './Components/Loging/PublicRoute';
 import s from './App.module.scss';
 
+
 const HomePage = lazy(() =>
   import('./Page/HomePage/HomePage' /*webpackChunkName: "HomePage"*/),
 );
@@ -39,7 +40,7 @@ const App = ({ onRefresh }) => {
 
   return (
     <>
-      <header>
+      <header className={s.header}>
         <div className={s.main}></div>
         <div className={s.overley}></div>
         <AppBar />
@@ -53,7 +54,7 @@ const App = ({ onRefresh }) => {
               path="/bestHotels"
               component={BestHotels}
               redirectTo="/login"
-            />
+            />            
             <PrivateRoute
               path="/myCabinet"
               component={MyCabinet}

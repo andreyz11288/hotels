@@ -3,7 +3,7 @@ import s from './Login.module.css';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { loginAuth } from '../../Redux/Auth/authOperation';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // toast.configure();
