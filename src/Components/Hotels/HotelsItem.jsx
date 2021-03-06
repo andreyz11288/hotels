@@ -41,7 +41,7 @@ export default function HotelsItem() {
                 <p>Price: ₴ {price}/Night</p>
                 <Link
                   className={styles.button}
-                  to={`/apartments/${id}`}
+                  to={{ pathname:`/apartments/${id}`}}
                 >
                   Book Now
                 </Link>

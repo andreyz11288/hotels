@@ -67,13 +67,13 @@ const App = ({ onRefresh }) => {
             {/* <Route exact path="/" component={HomePage} /> */}
             <Route path="/team" component={Team} />
             <PrivateRoute
-              path="/apartments"
-              component={Apartments}
+              path="/apartments/:id"
+              component={ApartmentsDetals}
               redirectTo="/login"
             />
             <PrivateRoute
-              path="/apartments/:id"
-              component={ApartmentsDetals}
+              path="/apartments"
+              component={Apartments}
               redirectTo="/login"
             />
             <PrivateRoute

@@ -1,9 +1,10 @@
 import React from 'react';
+import Hotels from '../../Components/Hotels/Hotels';
 
 export default function Apartments() {
   return (
     <div>
-      <h1>Apartments</h1>
+      <Hotels />
     </div>
   );
 }
