@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import styles from './Hotels.module.scss';
 import actions from '../../Redux/Hotels/HotelsActions/hotelsActions';
 
-export default function Filter({ apartments }) {
+export default function Filter() {
   const [city, setCity] = useState('');
   const [price, setPrice] = useState('');
   const getCity = evt => {
@@ -21,7 +21,8 @@ export default function Filter({ apartments }) {
   return (
     <>
       <div className={styles.filterContainer}>
-        <label>
+        <ul className={styles.filterContainerList}></ul>
+        <label className={styles.filterContainerLabel}>
           <span>Choose city</span>
           <input
             type="text"
@@ -30,8 +31,8 @@ export default function Filter({ apartments }) {
             onChange={getCity}
           />
         </label>
-        <label>
-          <span>Choose price</span>
+        <label className={styles.filterContainerLabel}>
+          <span>Choose start price</span>
           <input
             type="text"
             name="price"
