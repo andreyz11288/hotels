@@ -37,7 +37,7 @@ const Apartments = lazy(() =>
 );
 const ApartmentsDetals = lazy(() =>
   import(
-    './Page/Apartments/Apartments' /*webpackChunkName: "ApartmentsDetals"*/
+    './Page/ApartmentsDetals/ApartmentsDetals' /*webpackChunkName: "ApartmentsDetals"*/
   ),
 );
 
@@ -72,7 +72,7 @@ const App = ({ onRefresh }) => {
               redirectTo="/login"
             />
             <PrivateRoute
-              path="/apartments/id"
+              path="/apartments/:id"
               component={ApartmentsDetals}
               redirectTo="/login"
             />
