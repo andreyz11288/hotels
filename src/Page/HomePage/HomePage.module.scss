@@ -1,0 +1,92 @@
+.overley {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  min-height: 100%;
+  opacity: 0.5;
+  background: #222;
+  z-index: -1;
+}
+
+.bacground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  min-height: 100%;
+  /* position: relative; */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: -2;
+  background: url(/img/bg_1.webp) no-repeat;
+  background-size: cover;
+}
+.homeLinck {
+  text-align: center;
+}
+
+.linckLogoReg,
+.HomePageLogo,
+.HomePageReg {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+  @media screen and (min-width: 768px) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+.span1 {
+  font-size: 60px;
+}
+
+.span2 {
+  font-size: 20px;
+  margin-top: auto;
+  margin-bottom: 2px;
+}
+.smallText {
+  line-height: 2.2;
+  text-align: center;
+  padding: 200px 15px 0 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  font-family: 'Old Standard TT', Arial, sans-serif;
+  @media screen and (min-width: 768px) {
+    padding: 250px 15px 0 15px;
+    font-size: 15px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 350px 15px 0 15px;
+    font-size: 18px;
+  }
+}
+.heroText {
+  margin-top: 0;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.2;
+  font-family: 'Old Standard TT', Arial, sans-serif;
+  @media screen and (min-width: 768px) {
+    font-size: 80px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 115px;
+  }
+}

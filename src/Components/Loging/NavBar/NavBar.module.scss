@@ -1,4 +1,4 @@
-.navLink {
+.navBarLink {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   color: rgba(255, 255, 255, 0.7);
@@ -18,54 +18,21 @@
     font-size: 13px;
   }
 }
-.navLinkactive {
-  // font-size: 13px;
-  // padding-top: 1.2rem;
-  // padding-bottom: 1.2rem;
-  // padding-left: 25px;
-  // padding-right: 25px;
+.navBarLinkactive {
   color: rgb(255, 255, 255);
-  // font-weight: 700;
-  // text-transform: uppercase;
-  // letter-spacing: 2px;
-  // text-decoration: none;
-  /* color: red; */
 }
 
-.ul {
+.navBarUl {
   list-style-type: none;
   display: flex;
-  /* border-bottom: 2px solid darkgrey; */
   margin: 0px;
   padding: 20px 0px 20px 20px;
   margin-left: auto;
 }
-.ul :not(:first-child) {
+.navBarUl :not(:first-child) {
   margin-left: 20px;
 }
-.li {
+.navBarLi {
   margin-top: auto;
   margin-bottom: auto;
 }
-/* .navLinkLogo,
-.navLinkactiveLogo {
-  padding-left: 0.7em;
-  color: #fff;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-  font-weight: 900;
-  font-size: 30px;
-  text-decoration: none;
-}
-.smallLogo {
-  white-space: nowrap;
-  font-size: 12px;
-  color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-.logoHotel {
-  padding-left: 10px;
-} */

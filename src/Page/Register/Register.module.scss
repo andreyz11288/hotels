@@ -1,4 +1,33 @@
-.form {
+.overley {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  min-height: 100%;
+  opacity: 0.5;
+  background: #222;
+  z-index: -1;
+}
+
+.bacground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  min-height: 100%;
+  /* position: relative; */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: -2;
+  background: url(/img/bg_1.webp) no-repeat;
+  background-size: cover;
+}
+.registerForm {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -7,18 +36,18 @@
   /* border: 2px solid black; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
-.button {
+.registerButton {
   margin-top: 10px;
   cursor: pointer;
   width: 260px;
   height: 30px;
 }
-.button:active {
+.registerButton:active {
   background-color: cornflowerblue;
   color: white;
   border-radius: 5px;
 }
-.label {
+.registerLabel {
   font-size: 12px;
   color: #fff;
   font-weight: 700;
@@ -28,21 +57,21 @@
   display: block;
 }
 /* .label {
+  display: block;
 } */
-.input {
+.registerInput {
   display: block;
   border-radius: 5px;
   width: 260px;
   height: 30px;
 }
-.input:focus {
+.registerInput:focus {
   outline: 0;
   border-radius: 5px;
   border-color: blue;
 }
-
-.h1 {
-  padding-top: 150px;
+.registerH1 {
+  padding-top: 100px;
   font-weight: 700;
   color: #fff;
   font-size: 40px;
@@ -50,7 +79,7 @@
   text-align: center;
   margin-bottom: 50px;
 }
-.p {
+.registerP {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
@@ -58,8 +87,8 @@
   font-size: 13px;
   letter-spacing: 1px;
 }
-.navLink,
-.navLinkactive {
+.registerNavLink,
+.registerNavLinkactive {
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;

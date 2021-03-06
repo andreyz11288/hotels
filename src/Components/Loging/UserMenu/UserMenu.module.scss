@@ -1,28 +1,5 @@
-.navLink {
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 20px;
-  font-weight: 800;
-  border-radius: 50%;
-}
-.navLinkactive {
-  font-size: 18px;
-  color: red;
-}
 
-.ul {
-  /* position: absolute;
-  right: 20px; */
-  list-style-type: none;
-  display: flex;
-  /* border-bottom: 2px solid darkgrey; */
-  margin: 0px;
-  padding: 20px 20px 20px 20px;
-}
-.ul :not(:first-child) {
-  margin-left: 20px;
-}
-.button {
+.userMenuButton {
   background: none;
   border: none;
   cursor: pointer;
@@ -40,7 +17,7 @@
     font-size: 13px;
   }
 }
-.divUser {
+.divUserMenu {
   margin-top: auto;
   margin-bottom: auto;
   @media screen and (min-width: 768px) {
