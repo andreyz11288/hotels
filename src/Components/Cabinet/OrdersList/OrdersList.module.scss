@@ -1,0 +1,71 @@
+.listOrders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    padding-left: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    // padding: 20px;
+  }
+}
+
+.appear {
+  transform: translateX(100%);
+  opacity: 0.1;
+  @media screen and (min-width: 1280px) {
+    transform: translateY(100%);
+    opacity: 0.1;
+  }
+}
+.appearActive {
+  transform: translateX(0);
+  opacity: 1;
+  @media screen and (min-width: 1280px) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  transition: all 250ms ease-in;
+}
+
+.enter {
+  transform: translateY(100%);
+  opacity: 0.1;
+  @media screen and (min-width: 1280px) {
+    transform: translateY(100%);
+    opacity: 0.1;
+  }
+}
+.enterActive {
+  transform: translateX(0);
+  opacity: 1;
+  @media screen and (min-width: 1280px) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  transition: all 250ms ease-in;
+}
+
+.exit {
+  transform: translateX(0);
+  opacity: 1;
+
+  @media screen and (min-width: 1280px) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.exitActive {
+  transform: translateX(100%);
+  opacity: 0.1;
+  @media screen and (min-width: 1280px) {
+    transform: translateY(-100%);
+    opacity: 0.1;
+  }
+  transition: all 250ms ease-in;
+}
