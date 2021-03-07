@@ -32,7 +32,7 @@ export default function HotelsItem() {
           >
             <li className={styles.hotelsListItem} key={id}>
               <div className={styles.hotelsListItemImageContainer}>
-                <LazyLoad height="100%" offsetVertical={50}>
+                <LazyLoad height="100%" offsetTop={200}>
                   <img
                     className={styles.hotelsListItemImage}
                     src={imgUrl}

@@ -1,6 +1,7 @@
 @import '../../utils/utils.scss';
 
 .hotels {
+  background-color: $main-color;
   @media screen and (min-width: 320px) {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -43,6 +44,7 @@
   justify-content: space-between;
   align-items: center;
   transition: background-color $animation-timing;
+  background-color: $white-color;
   @media screen and (min-width: 320px) {
     padding: 15px;
   }
@@ -93,7 +95,7 @@
 .button {
   @extend %button-throw;
   padding: 5px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
