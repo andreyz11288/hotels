@@ -69,22 +69,22 @@ const App = ({ onRefresh }) => {
             <PrivateRoute
               path="/apartments/:id"
               component={ApartmentsDetals}
-              redirectTo="/login"
+              redirectTo="/"
             />
             <PrivateRoute
               path="/apartments"
               component={Apartments}
-              redirectTo="/login"
+              redirectTo="/"
             />
             <PrivateRoute
               path="/bestHotels"
               component={BestHotels}
-              redirectTo="/login"
+              redirectTo="/"
             />
             <PrivateRoute
               path="/myCabinet"
               component={MyCabinet}
-              redirectTo="/login"
+              redirectTo="/"
             />
             <PublicRoute
               path="/login"

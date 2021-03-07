@@ -1,3 +1,5 @@
+@import '../../../utils/utils.scss';
+
 .nav {
   width: 100%;
   padding-top: 10px;
@@ -8,17 +10,14 @@
 .header {
   position: relative;
   width: 100%;
-  border-bottom: 2px solid darkgrey;
+  line-height: 0.85;
+  border-bottom: 2px solid $little-text-color;
   display: flex;
-  // background: #222;
-  // @media screen and (min-width: 768px) {
-  //   background: none;
-  // }
 }
 .navLinkLogo,
 .navLinkactiveLogo {
   padding-left: 0.7em;
-  color: #fff;
+  color: $white-color;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
   font-weight: 900;
@@ -29,7 +28,7 @@
   line-height: 0.85;
   white-space: nowrap;
   font-size: 12px;
-  color: #fff;
+  color: $white-color;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
