@@ -1,28 +1,22 @@
+@import '../../../utils/utils.scss';
 .wrapper {
   @media screen and (min-width: 768px) {
     display: none;
   }
-  /* position: absolute; */
   width: 100%;
-  /* float: right; */
   padding: 20px 10px 0 0;
-
-  /* height: 40px;
-  top: 30%;
-  left: 80px; */
 }
 .checkMenu {
   display: none;
 }
 .labelCheck {
-  /* display: block; */
   position: absolute;
   top: 0px;
   right: 0px;
 
   width: 50%;
   height: 100%;
-  color: #fff;
+  color: $white-color;
   cursor: pointer;
   z-index: 2;
 }
@@ -35,11 +29,8 @@
   right: 70px;
   width: 35px;
   height: 2px;
-  background-color: #fff;
+  background-color: $white-color;
   transition: 0.5s all;
-  // @media screen and (min-width: 768px) {
-  //   right: 140px;
-  // }
 }
 .burgerLineSecond,
 .burgerLineThird {
@@ -66,10 +57,10 @@
   width: 100%;
   padding: 10px;
   text-align: center;
-  color: white;
+  color: $white-color;
   text-decoration: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  background: #222 !important;
+  border-top: 1px solid $little-text-color;
+  background: $hover-color;
 }
 .checkMenu:checked ~ .mainMenu {
   max-height: 500px;
@@ -91,7 +82,4 @@
   float: right;
   padding-top: 25px;
   padding-right: 10px;
-  // @media screen and (min-width: 768px) {
-  //   padding-right: 80px;
-  // }
 }

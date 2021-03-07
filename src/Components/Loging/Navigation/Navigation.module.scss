@@ -1,17 +1,18 @@
+@import '../../../utils/utils.scss';
 .navLink {
   font-size: 13px;
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   padding-left: 25px;
   padding-right: 25px;
-  color: rgba(255, 255, 255, 0.7);
+  color: $white-color;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
 }
 .navLinkactive {
-  color: rgb(255, 255, 255);
+  color: $white-color;
 }
 
 .navUl {
@@ -19,8 +20,6 @@
   margin-bottom: auto;
   list-style-type: none;
   display: flex;
-  /* border-bottom: 2px solid darkgrey; */
-  /* margin: 0px; */
   padding: 20px 20px 20px 20px;
 }
 .navUl :not(:first-child) {
