@@ -1,0 +1,166 @@
+@import '../../../utils/utils.scss';
+
+.imgWrapper {
+  @media screen and (min-width: 320px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 480px) {
+    min-width: 250px;
+    max-width: 350px;
+    // max-width: 100%;
+  }
+  @media screen and (min-width: 1280px) {
+    // min-width: 240px;
+    max-width: none;
+    height: 50%;
+  }
+}
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.orderItem {
+  padding: 15px;
+  text-align: center;
+  align-items: center;
+  background-color: rgba($color: $hover-color, $alpha: 0.4);
+
+  &:nth-child(2n) {
+    background-color: $white-color;
+  }
+
+  @media screen and (min-width: 320px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media screen and (min-width: 480px) {
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 15px;
+
+    // width: 50%;
+    padding: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    box-shadow: 0px 1px 5px $main-color;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    height: 450px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    background-color: $white-color;
+  }
+}
+
+.description {
+  width: 100%;
+  color: inherit;
+  text-align: center;
+  & h3 {
+    @extend %text-throw;
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: $oldStandart;
+    color: $text-color;
+    transition: color $animation-timing;
+  }
+  & p {
+    @extend %text-throw;
+    line-height: 1.8;
+    color: $little-text-color;
+    text-align: center;
+    @media screen and (min-width: 320px) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}
+.deleteBtn {
+  // width: 100%;
+  @extend %button-throw;
+  padding: 10px 30px;
+  outline: none;
+  border: solid 2px #ff4930;
+  font: inherit;
+  color: #ff4930;
+  font-weight: 700;
+  background-color: transparent;
+  margin-left: 10px;
+  &:focus,
+  &:hover {
+    background-color: #ff4930;
+    color: $white-color;
+    transition: all $animation-timing;
+  }
+}
+.buttonInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+  @media screen and(min-width: 480px) and (max-width: 570px) {
+    flex-direction: column;
+    margin-top: 0;
+    & span {
+      margin-right: 0px;
+      margin-bottom: 5px;
+    }
+
+    & .deleteBtn {
+      margin-left: 0;
+    }
+  }
+  & span {
+    @extend %text-throw;
+    text-transform: uppercase;
+    color: $main-color;
+    // margin-right: 15px;
+    // @media screen and (min-width: 320px) {
+    //   font-size: 13px;
+    // }
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 18px;
+    }
+  }
+  // & button {
+  //   @extend %button-throw;
+  //   padding: 5px 10px;
+  //   border: 1px solid rgba(0, 0, 0, 0.05);
+  //   text-transform: uppercase;
+  //   font-size: 14px;
+  //   font-weight: 700;
+  //   color: $text-color;
+  //   transition: $animation-timing;
+  //   border-radius: 2px;
+  //   cursor: pointer;
+  // }
+}
+
+.orderItem:hover,
+.orderItem:focus {
+  background-color: $hover-color;
+  color: $main-color;
+  transition: all $animation-timing;
+  .description {
+    & h3 {
+      color: $white-color;
+    }
+  }
+}
+.descriptionWrapper {
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}

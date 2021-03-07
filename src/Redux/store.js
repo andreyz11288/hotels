@@ -1,6 +1,11 @@
 import authReduser from './Auth/authReduser';
 import hotelsReducer from './Hotels/HotelsReducer/hotelsReducer';
-import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { cabinetReducer } from './Cabinet';
+import {
+  configureStore,
+  combineReducers,
+  getDefaultMiddleware,
+} from '@reduxjs/toolkit';
 import {
   FLUSH,
   REHYDRATE,
@@ -16,7 +21,14 @@ import storage from 'redux-persist/lib/storage';
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      ignoredActions: [
+        FLUSH,
+        REHYDRATE,
+        PAUSE,
+        PERSIST,
+        PURGE,
+        REGISTER,
+      ],
     },
   }),
 ];
@@ -24,15 +36,20 @@ const middleware = [
 const authPersistConfig = {
   key: 'token',
   storage,
-  whitelist: ['token']
-}
+  whitelist: ['token'],
+};
 const mainReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReduser),
   booking: hotelsReducer,
+  orders: cabinetReducer,
 });
 
-const store = configureStore({ reducer: mainReducer, middleware, devTools: process.env.NODE_ENV === 'development' });
+const store = configureStore({
+  reducer: mainReducer,
+  middleware,
+  devTools: process.env.NODE_ENV === 'development',
+});
 const persistor = persistStore(store);
 
-const exported = {store, persistor}
+const exported = { store, persistor };
 export default exported;
