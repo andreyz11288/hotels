@@ -13,7 +13,8 @@ const ModalApp = () => {
     document.addEventListener('click', e => {
       if (
         e.target.tagName !== 'INPUT' &&
-        e.target.tagName !== 'LABEL'
+        e.target.tagName !== 'LABEL' &&
+        e.target.tagName !== 'SPAN'
       ) {
         const qq = document.querySelector('#checkMenu');
         if (qq.checked) {

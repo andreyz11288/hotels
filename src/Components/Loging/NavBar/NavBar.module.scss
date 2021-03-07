@@ -19,8 +19,13 @@
     font-size: 13px;
   }
 }
+.navBarLink:hover {
+  @media screen and (min-width: 1280px) {
+    color: rgba(225, 225, 225, 0.8);
+  }
+}
 .navBarLinkactive {
-  color: rgba(225, 225, 225, 0.8);
+  color: $main-color;
 }
 
 .navBarUl {
