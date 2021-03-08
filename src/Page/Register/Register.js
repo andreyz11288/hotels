@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import s from './Register.module.scss';
-import { useDispatch } from 'react-redux';
+import '../Login/Login.css';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerAuth } from '../../Redux/Auth/authOperation';
+import { getWaiting } from '../../Redux/Auth/authSelectors';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CSSTransition } from 'react-transition-group';
 
 const Register = () => {
   const dispftch = useDispatch();
+  const wait = useSelector(getWaiting);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,6 +32,14 @@ const Register = () => {
       <div className={s.bacground}></div>
       <div className={s.overley}></div>
       <ToastContainer />
+      <CSSTransition
+        in={wait}
+        classNames="waitingMessage"
+        timeout={250}
+        unmountOnExit
+      >
+        <h2 className={s.waitingMessage}>Please Wait...</h2>
+      </CSSTransition>
       <h1 className={s.registerH1}>Register</h1>
       <form className={s.registerForm} onSubmit={btnClick}>
         <label className={s.registerLabel}>

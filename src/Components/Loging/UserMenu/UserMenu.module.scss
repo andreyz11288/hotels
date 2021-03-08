@@ -42,7 +42,6 @@
   @media screen and (min-width: 768px) {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
-    color: $white-color;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
@@ -57,4 +56,7 @@
     padding-right: 25px;
     font-size: 13px;
   }
+}
+.navLink:hover {
+  color: rgba(225, 225, 225, 0.8);
 }

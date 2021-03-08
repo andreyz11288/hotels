@@ -14,7 +14,7 @@
   top: 0px;
   right: 0px;
 
-  width: 50%;
+  width: 20%;
   height: 100%;
   color: $white-color;
   cursor: pointer;
@@ -26,7 +26,7 @@
 .burgerLineFourth {
   position: absolute;
   top: 25px;
-  right: 70px;
+  right: 25px;
   width: 35px;
   height: 2px;
   background-color: $white-color;
@@ -50,17 +50,23 @@
   max-height: 0;
   font-size: 0;
   overflow: hidden;
-  transition: 0.5s all;
+  transition: $animation-timing;
 }
 .link {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 15px 0 15px 0;
   text-align: center;
   color: $white-color;
   text-decoration: none;
   border-top: 1px solid $little-text-color;
   background: $hover-color;
+}
+.link:active {
+  color: $main-color;
+}
+.mainMenu:last-child {
+  border-radius: 0 0 15px 15px;
 }
 .checkMenu:checked ~ .mainMenu {
   max-height: 500px;
@@ -80,6 +86,6 @@
 }
 .spanCheck {
   float: right;
-  padding-top: 25px;
-  padding-right: 10px;
+  padding-top: 28px;
+  padding-right: 80px;
 }
