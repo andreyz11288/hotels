@@ -1,10 +1,17 @@
-import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  Suspense,
+  lazy,
+  // , useEffect
+} from 'react';
+import {
+  // useDispatch,
+  useSelector,
+} from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import AppBar from './Components/Loging/AppBar/AppBar';
-import { getCurrentUser } from './Redux/Auth/authOperation';
-import PrivateRoute from './Components/Loging/PrivateRoute';
-import PublicRoute from './Components/Loging/PublicRoute';
+// import { getCurrentUser } from './Redux/Auth/authOperation';
+import PrivateRoute from './Routes/PrivateRoutes';
+import PublicRoute from './Routes/PublicRoutes';
 import s from './App.module.scss';
 import { getIsAutheticated } from './Redux/Auth/authSelectors';
 
@@ -42,12 +49,12 @@ const ApartmentsDetals = lazy(() =>
 );
 
 const App = ({ onRefresh }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const isLogin = useSelector(getIsAutheticated);
 
-  useEffect(() => {
-    dispatch(getCurrentUser());
-  }, [dispatch, onRefresh]);
+  // useEffect(() => {
+  //   dispatch(getCurrentUser());
+  // }, [dispatch, onRefresh]);
 
   return (
     <>
@@ -57,14 +64,13 @@ const App = ({ onRefresh }) => {
       <main>
         <Suspense fallback={<h1>Lodding...</h1>}>
           <Switch>
-            <PublicRoute
+            {/* <PublicRoute
               exact
               path="/"
               restricted
               redirectTo="/apartments"
               component={HomePage}
-            />
-            {/* <Route exact path="/" component={HomePage} /> */}
+            /> */}
             <Route path="/team" component={Team} />
             <PrivateRoute
               path="/apartments/:id"

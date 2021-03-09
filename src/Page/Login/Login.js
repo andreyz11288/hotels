@@ -18,8 +18,6 @@ const Login = () => {
   const emailFunc = e => setEmail(e.target.value);
   const passwordFunc = e => setPassword(e.target.value);
 
-  console.log(wait);
-
   const btnClick = e => {
     e.preventDefault();
     dispatch(loginAuth({ email, password }));
