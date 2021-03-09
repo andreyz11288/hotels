@@ -10,8 +10,16 @@ const getAllHotels = () => dispatch => {
     .then(({ data }) => dispatch(actions.getHotelsSuccess(data)))
     .catch(error => dispatch(actions.getHotelsError(error.message)));
 };
+const getAllCities = () => dispatch => {
+  dispatch(actions.getCitiesRequest());
+  axios
+    .get('/cities')
+    .then(({ data }) => dispatch(actions.getCitiesSuccess(data)))
+    .catch(error => dispatch(actions.getCitiesError(error.message)));
+};
 const exported = {
   getAllHotels,
+  getAllCities,
 };
 
 export default exported;

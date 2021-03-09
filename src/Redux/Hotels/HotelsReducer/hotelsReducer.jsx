@@ -3,6 +3,9 @@ import actions from '../HotelsActions/hotelsActions';
 const apartments = createReducer([], {
   [actions.getHotelsSuccess]: (state, { payload }) => payload,
 });
+const cities = createReducer([], {
+  [actions.getCitiesSuccess]: (state, { payload }) => payload,
+});
 const filter = createReducer(
   { city: '', price: '' },
   {
@@ -13,4 +16,5 @@ const filter = createReducer(
 export default combineReducers({
   apartments,
   filter,
+  cities,
 });
