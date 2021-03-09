@@ -86,25 +86,19 @@ const ModalApp = () => {
                 My cabinet
               </NavLink>
               <NavLink
-                exact
                 to="/team"
                 className={s.link}
                 activeClassName={s.navLinkactive}
               >
                 Team
               </NavLink>
-              <NavLink
-                to="#"
-                className={s.link}
-                activeClassName={s.navLinkactive}
-              >
+              <div className={s.link}>
                 <UserMenu />
-              </NavLink>
+              </div>
             </>
           ) : (
             <>
               <NavLink
-                exact
                 to="/team"
                 className={s.link}
                 activeClassName={s.navLinkactive}

@@ -13,6 +13,7 @@ const UserMenu = () => {
   return (
     <div className={s.exitLinck}>
       <NavLink
+        exact
         to="/"
         className={s.navLink}
         activeClassName={s.navLinkactive}

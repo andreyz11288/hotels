@@ -27,7 +27,6 @@ export const AppBar = () => {
         </NavLink>
       ) : (
         <NavLink
-          exact
           to="/apartments"
           className={s.navLinkLogo}
           activeClassName={s.navLinkactiveLogo}

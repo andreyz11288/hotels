@@ -56,7 +56,6 @@ function NavBar() {
         )}
         <li className={s.navBarLi}>
           <NavLink
-            exact
             to="/team"
             className={s.navBarLink}
             activeClassName={s.navBarLinkactive}

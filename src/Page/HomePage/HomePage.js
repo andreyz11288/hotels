@@ -23,8 +23,7 @@ const HomePage = () => {
             </NavLink>
             &nbsp; or &nbsp;
             <NavLink className={s.HomePageReg} to="/register">
-              {' '}
-              register{' '}
+              register
             </NavLink>
             .
           </p>
