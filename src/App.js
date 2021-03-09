@@ -64,13 +64,13 @@ const App = ({ onRefresh }) => {
       <main>
         <Suspense fallback={<h1>Lodding...</h1>}>
           <Switch>
-            {/* <PublicRoute
+            <PublicRoute
               exact
               path="/"
               restricted
               redirectTo="/apartments"
               component={HomePage}
-            /> */}
+            /> 
             <Route path="/team" component={Team} />
             <PrivateRoute
               path="/apartments/:id"
