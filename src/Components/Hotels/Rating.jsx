@@ -15,6 +15,25 @@ export default function Rating({ rating }) {
     emtyStar,
   ]);
 
+  useEffect(() => {
+    const ratedStars = stars.slice(rating);
+    if (rating === 1) {
+      setStars([Star, ...ratedStars]);
+    }
+    if (rating === 2) {
+      setStars([Star, Star, ...ratedStars]);
+    }
+    if (rating === 3) {
+      setStars([Star, Star, Star, ...ratedStars]);
+    }
+    if (rating === 4) {
+      setStars([Star, Star, Star, Star, ...ratedStars]);
+    }
+    if (rating === 5) {
+      setStars([Star, Star, Star, Star, Star]);
+    }
+  }, []);
+
   return (
     <ul className={styles.starContainer}>
       {stars.map(star => {

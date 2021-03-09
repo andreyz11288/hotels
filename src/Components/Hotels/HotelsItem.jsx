@@ -45,7 +45,8 @@ export default function HotelsItem() {
                 <h3>{location.city}</h3>
                 <p>{title}</p>
                 <div className={styles.ratingContainer}>
-                  Rating: <Rating rating={rating} />
+                  <span>Rating: {rating}</span>{' '}
+                  <Rating rating={rating} />
                 </div>
                 <div className={styles.buttonInner}>
                   <p>Price: ₴ {price}/Night</p>
