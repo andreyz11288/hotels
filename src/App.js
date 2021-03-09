@@ -1,15 +1,15 @@
 import {
   Suspense,
   lazy,
-  // , useEffect
+   useEffect
 } from 'react';
 import {
-  // useDispatch,
+   useDispatch,
   useSelector,
 } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import AppBar from './Components/Loging/AppBar/AppBar';
-// import { getCurrentUser } from './Redux/Auth/authOperation';
+ import { getCurrentUser } from './Redux/Auth/authOperation';
 import PrivateRoute from './Routes/PrivateRoutes';
 import PublicRoute from './Routes/PublicRoutes';
 import s from './App.module.scss';
@@ -49,12 +49,12 @@ const ApartmentsDetals = lazy(() =>
 );
 
 const App = ({ onRefresh }) => {
-  // const dispatch = useDispatch();
+   const dispatch = useDispatch();
   const isLogin = useSelector(getIsAutheticated);
 
-  // useEffect(() => {
-  //   dispatch(getCurrentUser());
-  // }, [dispatch, onRefresh]);
+   useEffect(() => {
+     dispatch(getCurrentUser());
+   }, [dispatch, onRefresh]);
 
   return (
     <>
