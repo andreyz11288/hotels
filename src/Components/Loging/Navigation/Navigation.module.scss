@@ -22,6 +22,7 @@
 .navLink:hover {
   @media screen and (min-width: 1280px) {
     color: rgba(225, 225, 225, 0.8);
+    transition: $animation-timing;
   }
 }
 .navLinkactive {

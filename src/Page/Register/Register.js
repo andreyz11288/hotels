@@ -40,45 +40,47 @@ const Register = () => {
       >
         <h2 className={s.waitingMessage}>Please Wait...</h2>
       </CSSTransition>
-      <h1 className={s.registerH1}>Register</h1>
-      <form className={s.registerForm} onSubmit={btnClick}>
-        <label className={s.registerLabel}>
-          Login
-          <input
-            className={s.registerInput}
-            type="text"
-            value={name}
-            placeholder="Enter login"
-            onChange={nameFunc}
-          />
-        </label>
+      <div className={s.containerBlockReg}>
+        <h1 className={s.registerH1}>Register</h1>
+        <form className={s.registerForm} onSubmit={btnClick}>
+          <label className={s.registerLabel}>
+            Login
+            <input
+              className={s.registerInput}
+              type="text"
+              value={name}
+              placeholder="Enter login"
+              onChange={nameFunc}
+            />
+          </label>
 
-        <label className={s.registerLabel}>
-          Email
-          <input
-            className={s.registerInput}
-            type="text"
-            value={email}
-            placeholder="Enter email"
-            onChange={emailFunc}
-          />
-        </label>
+          <label className={s.registerLabel}>
+            Email
+            <input
+              className={s.registerInput}
+              type="text"
+              value={email}
+              placeholder="Enter email"
+              onChange={emailFunc}
+            />
+          </label>
 
-        <label className={s.registerLabel}>
-          Password
-          <input
-            className={s.registerInput}
-            type="password"
-            value={password}
-            placeholder="Enter password"
-            onChange={passwordFunc}
-          />
-        </label>
-        <br />
-        <button type="submit" className={s.registerButton}>
-          Register
-        </button>
-      </form>
+          <label className={s.registerLabel}>
+            Password
+            <input
+              className={s.registerInput}
+              type="password"
+              value={password}
+              placeholder="Enter password"
+              onChange={passwordFunc}
+            />
+          </label>
+          <br />
+          <button type="submit" className={s.registerButton}>
+            Register
+          </button>
+        </form>
+      </div>
     </>
   );
   // }

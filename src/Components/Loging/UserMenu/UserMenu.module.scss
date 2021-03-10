@@ -54,9 +54,10 @@
     letter-spacing: 2px;
     padding-left: 25px;
     padding-right: 25px;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .navLink:hover {
   color: rgba(225, 225, 225, 0.8);
+  transition: $animation-timing;
 }

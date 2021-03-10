@@ -38,46 +38,47 @@ const Login = () => {
       >
         <h2 className={s.waitingMessage}>Please Wait...</h2>
       </CSSTransition>
+      <div className={s.containerLogin}>
+        <h1 className={s.loginH1}>Login</h1>
+        <form className={s.loginForm} onSubmit={btnClick}>
+          <label className={s.loginLabel}>
+            Email
+            <input
+              className={s.loginInput}
+              type="text"
+              value={email}
+              placeholder="Enter email"
+              onChange={emailFunc}
+            />
+          </label>
 
-      <h1 className={s.loginH1}>Login</h1>
-      <form className={s.loginForm} onSubmit={btnClick}>
-        <label className={s.loginLabel}>
-          Email
-          <input
-            className={s.loginInput}
-            type="text"
-            value={email}
-            placeholder="Enter email"
-            onChange={emailFunc}
-          />
-        </label>
-
-        <label className={s.loginLabel}>
-          Password
-          <input
-            className={s.loginInput}
-            type="password"
-            value={password}
-            placeholder="Enter password"
-            onChange={passwordFunc}
-          />
-        </label>
-        <br />
-        <button type="submit" className={s.loginButton}>
-          Login
-        </button>
-      </form>
-      <p className={s.loginP}>
-        No account yet? &nbsp;
-        <NavLink
-          exact
-          to="/register"
-          className={s.loginNavLink}
-          activeClassName={s.loginNavLinkactive}
-        >
-          Register
-        </NavLink>
-      </p>
+          <label className={s.loginLabel}>
+            Password
+            <input
+              className={s.loginInput}
+              type="password"
+              value={password}
+              placeholder="Enter password"
+              onChange={passwordFunc}
+            />
+          </label>
+          <br />
+          <button type="submit" className={s.loginButton}>
+            Login
+          </button>
+        </form>
+        <p className={s.loginP}>
+          No account yet? &nbsp;
+          <NavLink
+            exact
+            to="/register"
+            className={s.loginNavLink}
+            activeClassName={s.loginNavLinkactive}
+          >
+            Register
+          </NavLink>
+        </p>
+      </div>
     </section>
   );
   // }
