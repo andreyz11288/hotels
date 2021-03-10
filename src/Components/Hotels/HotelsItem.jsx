@@ -32,7 +32,11 @@ export default function HotelsItem() {
           >
             <li className={styles.hotelsListItem} key={id}>
               <div className={styles.hotelsListItemImageContainer}>
-                <LazyLoad height="100%" offsetTop={200}>
+                <LazyLoad
+                  height="100%"
+                  offsetTop={300}
+                  debounce={false}
+                >
                   <img
                     className={styles.hotelsListItemImage}
                     src={imgUrl}
@@ -45,7 +49,7 @@ export default function HotelsItem() {
                 <h3>{location.city}</h3>
                 <p>{title}</p>
                 <div className={styles.ratingContainer}>
-                  <span>Rating: {rating}</span>{' '}
+                  <span>Rating: </span>
                   <Rating rating={rating} />
                 </div>
                 <div className={styles.buttonInner}>

@@ -6,6 +6,8 @@ import operations from '../../Redux/Hotels/HotelsOperations/hotelsOperations';
 import HotelItem from './HotelsItem';
 import Filter from './Filter';
 import { TransitionGroup } from 'react-transition-group';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Hotels() {
   const apartments = useSelector(selectors.getApartments);
@@ -17,6 +19,7 @@ export default function Hotels() {
 
   return (
     <section className={styles.hotels}>
+      <ToastContainer />
       <Filter apartments={apartments} />
       <TransitionGroup component="ul" className={styles.hotelsList}>
         <HotelItem apartments={apartments} />

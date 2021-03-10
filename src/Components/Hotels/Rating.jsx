@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Hotels.module.scss';
 import { v4 as uuidv4 } from 'uuid';
+
 const emtyStar =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1024px-Empty_Star.svg.png';
 const Star =
@@ -32,6 +33,7 @@ export default function Rating({ rating }) {
     if (rating === 5) {
       setStars([Star, Star, Star, Star, Star]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
