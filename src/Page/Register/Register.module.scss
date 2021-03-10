@@ -55,10 +55,11 @@
     height: 40px;
   }
 }
-.registerButton:active {
+.registerButton:hover {
   background-color: $hover-color;
   color: $white-color;
   border-radius: 5px;
+  transition: $animation-timing;
 }
 .registerLabel {
   font-size: 12px;
@@ -71,6 +72,11 @@
   @media screen and (min-width: 1280px) {
     font-size: 15px;
   }
+}
+.registerLabel:focus-within {
+  color: $hover-color;
+  text-align: center;
+  transition: $animation-timing;
 }
 /* .label {
   display: block;
@@ -91,7 +97,6 @@
   border-color: $main-color;
 }
 .registerH1 {
-  // padding-top: 100px;
   margin: 0;
   font-weight: 700;
   color: $white-color;

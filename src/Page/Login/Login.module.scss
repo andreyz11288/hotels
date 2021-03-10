@@ -56,10 +56,11 @@
     height: 40px;
   }
 }
-.loginButton:active {
+.loginButton:hover {
   background-color: $hover-color;
   color: white;
   border-radius: 5px;
+  transition: $animation-timing;
 }
 .loginLabel {
   font-size: 12px;
@@ -89,6 +90,12 @@
   outline: 0;
   border-radius: 5px;
   border-color: $main-color;
+}
+// .loginInput:focus ~ .loginLabel,
+.loginLabel:focus-within {
+  color: $hover-color;
+  text-align: center;
+  transition: $animation-timing;
 }
 
 .loginH1 {
@@ -137,6 +144,10 @@
   @media screen and (min-width: 1280px) {
     font-size: 15px;
   }
+}
+.loginNavLink:hover {
+  color: $hover-color;
+  transition: $animation-timing;
 }
 .waitingMessage {
   width: 155px;

@@ -38,7 +38,6 @@ const Login = () => {
       >
         <h2 className={s.waitingMessage}>Please Wait...</h2>
       </CSSTransition>
-
       <div className={s.containerLogin}>
         <h1 className={s.loginH1}>Login</h1>
         <form className={s.loginForm} onSubmit={btnClick}>
