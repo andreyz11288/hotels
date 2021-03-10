@@ -2,11 +2,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './OrderItem.module.scss';
 import { cabinetOperations } from '../../../Redux/Cabinet';
+import Rating from '@material-ui/lab/Rating';
 
 export default function OrderItem({ order }) {
   const dispatch = useDispatch();
   const { id, date, apartment } = order;
-  const { title, imgUrl, price, location } = apartment;
+  const { title, imgUrl, price, location, rating } = apartment;
   const currentDate = date.split('T')[0];
   return (
     <li className={styles.orderItem}>
@@ -17,6 +18,7 @@ export default function OrderItem({ order }) {
         <div className={styles.description}>
           <h3 className={styles.descriptionItem}>{location.city}</h3>
           <p className={styles.descriptionItem}>{title}</p>
+          <Rating name="read-only" value={rating} readOnly />
           <p className={styles.descriptionItem}>
             Ordered at {currentDate}
           </p>
