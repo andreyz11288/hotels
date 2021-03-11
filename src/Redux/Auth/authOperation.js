@@ -36,15 +36,13 @@ const registerAuth = credentials => async dispatch => {
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
-    console.log(error);
-
     notify(error.message);
     dispatch(registerError(error.message));
   }
 };
 
 const loginAuth = credentials => async dispatch => {
-  const notify = () => toast.error('incorrect username or password!');
+  const notify = () => toast.error('incorrect  Email or Password!');
   dispatch(loginStart());
   try {
     const response = await axios.post('/users/login', credentials);

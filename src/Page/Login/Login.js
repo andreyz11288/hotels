@@ -8,6 +8,8 @@ import { getWaiting } from '../../Redux/Auth/authSelectors';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CSSTransition } from 'react-transition-group';
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -36,7 +38,10 @@ const Login = () => {
         timeout={250}
         unmountOnExit
       >
-        <h2 className={s.waitingMessage}>Please Wait...</h2>
+        <Loader className={s.waitingMessage}          
+         type="Audio" color="#FFF" height={80} width={80}
+      />
+      
       </CSSTransition>
       <div className={s.containerLogin}>
         <h1 className={s.loginH1}>Login</h1>
@@ -44,6 +49,7 @@ const Login = () => {
           <label className={s.loginLabel}>
             <span>Email</span>            
             <input
+              required
               className={s.loginInput}
               type="text"
               value={email}
@@ -55,6 +61,7 @@ const Login = () => {
           <label className={s.loginLabel}>
             <span>Password</span>            
             <input
+              required
               className={s.loginInput}
               type="password"
               value={password}

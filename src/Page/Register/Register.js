@@ -7,6 +7,8 @@ import { getWaiting } from '../../Redux/Auth/authSelectors';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CSSTransition } from 'react-transition-group';
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Register = () => {
   const dispftch = useDispatch();
@@ -38,7 +40,10 @@ const Register = () => {
         timeout={250}
         unmountOnExit
       >
-        <h2 className={s.waitingMessage}>Please Wait...</h2>
+        {/* <h2 className={s.waitingMessage}>Please Wait...</h2> */}
+         <Loader className={s.waitingMessage}          
+         type="Audio" color="#FFF" height={80} width={80}
+      />
       </CSSTransition>
       <div className={s.containerBlockReg}>
         <h1 className={s.registerH1}>Registration</h1>
@@ -46,6 +51,7 @@ const Register = () => {
           <label className={s.registerLabel}>
             Login
             <input
+              required
               className={s.registerInput}
               type="text"
               value={name}
@@ -57,6 +63,7 @@ const Register = () => {
           <label className={s.registerLabel}>
             Email
             <input
+              required
               className={s.registerInput}
               type="text"
               value={email}
@@ -68,6 +75,7 @@ const Register = () => {
           <label className={s.registerLabel}>
             Password
             <input
+              required
               className={s.registerInput}
               type="password"
               value={password}

@@ -14,6 +14,8 @@ import PrivateRoute from './Routes/PrivateRoutes';
 import PublicRoute from './Routes/PublicRoutes';
 import s from './App.module.scss';
 import { getIsAutheticated } from './Redux/Auth/authSelectors';
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const HomePage = lazy(() =>
   import('./Page/HomePage/HomePage' /*webpackChunkName: "HomePage"*/),
@@ -62,7 +64,9 @@ const App = ({ onRefresh }) => {
         <AppBar />
       </header>
       <main>
-        <Suspense fallback={<h1>Lodding...</h1>}>
+        <Suspense fallback={ <Loader className={s.suspenseMessage}          
+         type="Audio" color="#FFF" height={80} width={80}
+      />}>
           <Switch>
             <PublicRoute
               exact

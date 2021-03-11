@@ -47,8 +47,10 @@ const isAuthenticated = createReducer(false, {
 const waiting = createReducer(false, {
   [loginStart]: () => true,
   [loginSuccess]: () => false,
+  [loginError]: () => false,
   [registerStart]: () => true,
   [registerSuccess]: () => false,
+  [registerError]: () => false,
 });
 
 export default combineReducers({
