@@ -41,7 +41,7 @@ const Register = () => {
         <h2 className={s.waitingMessage}>Please Wait...</h2>
       </CSSTransition>
       <div className={s.containerBlockReg}>
-        <h1 className={s.registerH1}>Register</h1>
+        <h1 className={s.registerH1}>Registration</h1>
         <form className={s.registerForm} onSubmit={btnClick}>
           <label className={s.registerLabel}>
             Login
@@ -77,7 +77,7 @@ const Register = () => {
           </label>
           <br />
           <button type="submit" className={s.registerButton}>
-            Register
+            Registration
           </button>
         </form>
       </div>

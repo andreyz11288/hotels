@@ -41,6 +41,7 @@
   color: $white-color;
   font-size: 13px;
   letter-spacing: 1px;
+  transition: $animation-timing;
   @media screen and (min-width: 768px) {
     font-size: 15px;
   }
@@ -51,7 +52,6 @@
 .HomePageLogo:hover,
 .HomePageReg:hover {
   color: $hover-color;
-  transition: $animation-timing;
 }
 .span1 {
   font-size: 60px;
@@ -107,6 +107,9 @@
   padding: 0 5px 0 5px;
   @media screen and (max-height: 190px) {
     display: none;
+  }
+  @media screen and (max-width: 767px) {
+    top: 40%;
   }
   @media screen and (min-width: 768px) {
     padding: 0 15px 0 15px;

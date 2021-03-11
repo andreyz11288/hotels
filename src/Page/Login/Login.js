@@ -42,7 +42,7 @@ const Login = () => {
         <h1 className={s.loginH1}>Login</h1>
         <form className={s.loginForm} onSubmit={btnClick}>
           <label className={s.loginLabel}>
-            Email
+            <span>Email</span>            
             <input
               className={s.loginInput}
               type="text"
@@ -53,7 +53,7 @@ const Login = () => {
           </label>
 
           <label className={s.loginLabel}>
-            Password
+            <span>Password</span>            
             <input
               className={s.loginInput}
               type="password"
@@ -64,7 +64,7 @@ const Login = () => {
           </label>
           <br />
           <button type="submit" className={s.loginButton}>
-            Login
+           Login           
           </button>
         </form>
         <p className={s.loginP}>
@@ -75,7 +75,7 @@ const Login = () => {
             className={s.loginNavLink}
             activeClassName={s.loginNavLinkactive}
           >
-            Register
+            Registration
           </NavLink>
         </p>
       </div>
