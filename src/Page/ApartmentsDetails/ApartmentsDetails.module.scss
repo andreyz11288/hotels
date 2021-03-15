@@ -1,0 +1,109 @@
+@import '../../utils/utils.scss';
+
+.container {
+  background-color: $main-color;
+  @media screen and (min-width: 320px) {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
+}
+
+.img {
+  width: 100%;
+}
+
+.button {
+  @extend %button-throw;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: $text-color;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.reviews_title {
+  color: $text-color;
+  font-size: 30px;
+}
+
+.review_author {
+  font: $oldStandart;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.list {
+  @extend %list-throw;
+  color: $text-color;
+  font: $nunito;
+}
+
+.main_info {
+  @media screen and (min-width: 320px) {
+    padding: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 50px;
+  }
+  & h2 {
+    @extend %text-throw;
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: $oldStandart;
+    color: $text-color;
+    text-align: center;
+  }
+
+  & p {
+    @extend %text-throw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.8;
+    color: $text-color;
+    text-align: center;
+    @media screen and (min-width: 320px) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.reviews_container {
+  @media screen and (min-width: 320px) {
+    padding: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 50px;
+  }
+}
+
+.textarea {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

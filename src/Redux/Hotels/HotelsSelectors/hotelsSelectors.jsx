@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 const getApartments = state => state.booking.apartments;
+const getApartmentsDetails = state => state.apartmentsDetails;
 const getFilter = state => state.booking.filter;
 
 const getVisibleApartments = createSelector(
@@ -18,6 +19,7 @@ const getVisibleApartments = createSelector(
 const exported = {
   getApartments,
   getVisibleApartments,
+  getApartmentsDetails,
 };
 
 export default exported;

@@ -1,5 +1,6 @@
 import authReduser from './Auth/authReduser';
 import hotelsReducer from './Hotels/HotelsReducer/hotelsReducer';
+import apartmentsDetailsReduser from '../Redux/ApartmentsDetails/apartmentDetailsReducer';
 import { cabinetReducer } from './Cabinet';
 import {
   configureStore,
@@ -42,6 +43,7 @@ const mainReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReduser),
   booking: hotelsReducer,
   orders: cabinetReducer,
+  apartmentsDetails: apartmentsDetailsReduser,
 });
 
 const store = configureStore({

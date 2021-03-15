@@ -35,9 +35,9 @@ const Apartments = lazy(() =>
     './Page/Apartments/Apartments' /*webpackChunkName: "Apartments"*/
   ),
 );
-const ApartmentsDetals = lazy(() =>
+const ApartmentsDetails = lazy(() =>
   import(
-    './Page/ApartmentsDetals/ApartmentsDetals' /*webpackChunkName: "ApartmentsDetals"*/
+    './Page/ApartmentsDetails/ApartmentsDetails' /*webpackChunkName: "ApartmentsDetals"*/
   ),
 );
 
@@ -68,7 +68,7 @@ const App = ({ onRefresh }) => {
             <Route path="/team" component={Team} />
             <PrivateRoute
               path="/apartments/:id"
-              component={ApartmentsDetals}
+              component={ApartmentsDetails}
               redirectTo="/"
             />
             <PrivateRoute
