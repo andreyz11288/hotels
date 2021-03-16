@@ -36,6 +36,7 @@ const registerAuth = credentials => async dispatch => {
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
+    console.log(error.response.data.message);
     if (error.message === 'Request failed with status code 409') {
       notify('Mail is already in use');
     } else if (
@@ -52,6 +53,11 @@ const registerAuth = credentials => async dispatch => {
       '"password" length must be at least 6 characters long'
     ) {
       notify('Password length must be at least 6 characters long');
+    } else if (
+      error.response.data.message ===
+      '"name" must only contain alpha-numeric characters'
+    ) {
+      notify('Only in English');
     }
     dispatch(registerError(error));
   }
