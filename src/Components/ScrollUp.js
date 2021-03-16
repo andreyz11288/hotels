@@ -23,7 +23,7 @@ const ScrollUp = () => {
         let scrollHedth = window.pageYOffset;
      
      
-        const upscrollFunc = setInterval(function () { if (scrollHedth > 0) { window.scroll(0, scrollHedth -= 20)} else{ clearInterval(upscrollFunc)} }, 00);
+        const upscrollFunc = setInterval(function () { if (scrollHedth > 0) { window.scroll(0, scrollHedth -= 20)} else{ clearInterval(upscrollFunc)} });
     }
    
    
