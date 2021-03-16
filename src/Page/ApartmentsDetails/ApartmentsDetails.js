@@ -3,6 +3,7 @@ import selectors from '../../Redux/Hotels/HotelsSelectors/hotelsSelectors.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import operations from '../../Redux/ApartmentsDetails/apartmentsDetailsOperation';
 import styles from '../ApartmentsDetails/ApartmentsDetails.module.scss';
+import Rating from '../../Components/ApartmentsDetails/Rating';
 
 export default function ApartmentsDetails(props) {
   const apartmentsById = useSelector(selectors.getApartmentsDetails);
@@ -21,6 +22,7 @@ export default function ApartmentsDetails(props) {
     <div className={styles.container}>
       <div className={styles.main_info}>
         <h2>{apartmentsById.title}</h2>
+        <Rating />
         <img className={styles.img} src={apartmentsById.imgUrl} />
         <p>{apartmentsById.descr}</p>
         <button className={styles.button}>Book now</button>
