@@ -36,8 +36,30 @@ const registerAuth = credentials => async dispatch => {
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
-    notify(error.message);
-    dispatch(registerError(error.message));
+    console.log(error.response.data.message);
+    if (error.message === 'Request failed with status code 409') {
+      notify('Mail is already in use');
+    } else if (
+      error.response.data.message === '"email" must be a valid email'
+    ) {
+      notify('Incorrect email format');
+    } else if (
+      error.response.data.message ===
+      '"name" length must be at least 3 characters long'
+    ) {
+      notify('Login length must be at least 3 characters long');
+    } else if (
+      error.response.data.message ===
+      '"password" length must be at least 6 characters long'
+    ) {
+      notify('Password length must be at least 6 characters long');
+    } else if (
+      error.response.data.message ===
+      '"name" must only contain alpha-numeric characters'
+    ) {
+      notify('Only in English');
+    }
+    dispatch(registerError(error));
   }
 };
 
