@@ -1,6 +1,7 @@
 import authReduser from './Auth/authReduser';
 import hotelsReducer from './Hotels/HotelsReducer/hotelsReducer';
 import { cabinetReducer } from './Cabinet';
+import {bestHotelsReducer} from './BestHotels';
 import {
   configureStore,
   combineReducers,
@@ -42,6 +43,7 @@ const mainReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReduser),
   booking: hotelsReducer,
   orders: cabinetReducer,
+  bestHotels: bestHotelsReducer,
 });
 
 const store = configureStore({

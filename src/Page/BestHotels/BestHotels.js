@@ -1,7 +1,12 @@
+import BestHotelsRaiting from '../../Components/BestHotelsRaiting';
+import ScrollUp from '../../Components/ScrollUp';
+
+
 const BestHotels = () => {
   return (
     <div>
-      <h1>BestHotels</h1>
+      <BestHotelsRaiting />
+      <ScrollUp />
     </div>
   );
 };
