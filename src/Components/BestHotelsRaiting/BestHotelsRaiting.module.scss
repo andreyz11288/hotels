@@ -1,0 +1,229 @@
+@import '../../utils/utils.scss';
+
+.appear {
+  transform: translateY(-100%);
+  opacity: 0.1;
+}
+.appearActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.enter {
+  transform: translateY(-100%);
+  opacity: 0.1;
+}
+.enterActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.bestHotels {
+  background-color: $main-color;
+  transition: $animation-timing;
+  @media screen and (max-width: 767px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  &List {
+    @extend %list-throw;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 450px;
+    @media screen and (max-width: 767px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+    }
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+    }
+  }
+
+  &Item {
+    font-family: $nunito;
+    transition: $animation-timing;
+  }
+}
+
+.bestHotelsItem:hover,
+.bestHotelsItem:focus {
+  .bestHotelsImgBlock::before {
+    opacity: 0.5;
+  }
+
+  .hotelBlock {
+    background-color: $hover-color;
+
+    &Title {
+      color: $white-color;
+    }
+
+    .button {
+      color: $white-color;
+      border: 1px solid $main-color;
+
+      &:hover,
+      &:focus {
+        background-color: $main-color;
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+.bestHotelsImgBlock {
+  position: relative;
+  height: 50%;
+  overflow: hidden;
+}
+
+.bestHotelsImgBlock::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background-color: $text-color;
+  transition: opacity $animation-timing;
+}
+
+.bestHotelsImgBlock::after {
+  position: absolute;
+  content: 'Top hotels -15%';
+  text-align: center;
+  top: 17%;
+  left: -38px;
+  min-width: 222px;
+  height: 20px;
+  background-color: yellow;
+  opacity: 2;
+  overflow: hidden;
+  font-family: $nunito;
+  font-size: 18px;
+  transform: rotate(-45deg);
+  @media screen and (max-width: 767px) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.hotelImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hotelBlock {
+  display: flex;
+  justify-content: center;
+  min-height: 50%;
+  width: 100%;
+  transition: background-color $animation-timing;
+  background-color: $white-color;
+  font-family: $nunito;
+
+  @media screen and (max-width: 1279px) {
+    padding: 15px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 50px;
+  }
+
+  &Inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &Title {
+    @extend %text-throw;
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: $oldStandart;
+    color: $text-color;
+    transition: color $animation-timing;
+  }
+
+  &Descr {
+    @extend %text-throw;
+    line-height: 1.4;
+    color: $little-text-color;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.hotelBlockPrice {
+  @extend %text-throw;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  color: $main-color;
+  @media screen and (max-width: 767px) {
+    font-size: 13px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.hotelBlockGetDiscount {
+  display: flex;
+  align-items: center;
+}
+
+.hotelBlockDiscount {
+  @extend %text-throw;
+  text-transform: uppercase;
+  color: $main-color;
+  @media screen and (max-width: 767px) {
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
+
+.button {
+  @extend %button-throw;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: $text-color;
+  transition: $animation-timing;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+}

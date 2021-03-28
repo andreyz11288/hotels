@@ -9,6 +9,7 @@ import {
 } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import AppBar from './Components/Loging/AppBar/AppBar';
+import Footer from './Components/Footer'
  import { getCurrentUser } from './Redux/Auth/authOperation';
 import PrivateRoute from './Routes/PrivateRoutes';
 import PublicRoute from './Routes/PublicRoutes';
@@ -116,6 +117,9 @@ const App = ({ onRefresh }) => {
           </Switch>
         </Suspense>
       </main>
+      <footer>
+        < Footer />
+      </footer>
     </>
   );
 };
