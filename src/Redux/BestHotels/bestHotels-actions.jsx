@@ -4,8 +4,9 @@ const getBestHotelsRequest = createAction('getBestHotelsRequest');
 const getBestHotelsSuccess = createAction('getBestHotelsSuccess');
 const getBestHotelsError = createAction('getBestHotelsError');
 
-export default {
+const exported = {
   getBestHotelsRequest,
   getBestHotelsSuccess,
   getBestHotelsError,
-};
+}
+export default exported;

@@ -12,5 +12,5 @@ const getBestHotels = () => dispatch => {
     })
     .catch(error => dispatch(bestHotelsActions.getBestHotelsError(error.message)));
 };
-
-export default { getBestHotels};
+const exported = { getBestHotels}
+export default exported;

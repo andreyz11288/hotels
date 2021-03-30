@@ -14,7 +14,8 @@ const ScrollUp = () => {
                 setstate(true)
             }
             else { setstate(false) }           
-        }        
+        } 
+        return () => document.removeEventListener('scroll',trackScroll);       
     }, [])
     
     
