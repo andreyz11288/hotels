@@ -1,6 +1,6 @@
 import authReduser from './Auth/authReduser';
 import hotelsReducer from './Hotels/HotelsReducer/hotelsReducer';
-import apartmentsDetailsReduser from '../Redux/ApartmentsDetails/apartmentDetailsReducer';
+import apartmentsDetailsCombineReducer from '../Redux/ApartmentsDetails/apartmentDetailsReducer';
 import { cabinetReducer } from './Cabinet';
 import {
   configureStore,
@@ -18,6 +18,7 @@ import {
   persistReducer,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -43,7 +44,7 @@ const mainReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReduser),
   booking: hotelsReducer,
   orders: cabinetReducer,
-  apartmentsDetails: apartmentsDetailsReduser,
+  apartmentsDetails: apartmentsDetailsCombineReducer,
 });
 
 const store = configureStore({
