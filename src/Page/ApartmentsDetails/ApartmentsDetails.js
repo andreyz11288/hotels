@@ -3,8 +3,7 @@ import selectors from '../../Redux/ApartmentsDetails/apartmentDetailsSelector';
 import { useSelector, useDispatch } from 'react-redux';
 import operations from '../../Redux/ApartmentsDetails/apartmentsDetailsOperation';
 import styles from '../ApartmentsDetails/ApartmentsDetails.module.scss';
-// import { instanceOf } from 'prop-types';
-// import Rating from '../../Components/ApartmentsDetails/Rating';
+
 
 export default function ApartmentsDetails(props) {
   const apartmentsById = useSelector(selectors.getApartmentsDetails);
@@ -45,8 +44,8 @@ export default function ApartmentsDetails(props) {
     setContent("");
     setRating('');
   };
-  const bookApartmentsSubmit = (evt) => {
-    evt.preventDefault();
+  const bookApartmentsSubmit = () => {
+    // evt.preventDefault();
     dispatch(operations.bookApartments(props.match.params.id, curDate))
   }
 
@@ -58,7 +57,7 @@ export default function ApartmentsDetails(props) {
         {/* <Rating /> */}
         <img className={styles.img} src={apartmentsById.imgUrl} />
         <p>{apartmentsById.descr}</p>
-        <button type='submit' onSubmit={bookApartmentsSubmit} className={styles.button}>Book now</button>
+        <button type='button' onClick={bookApartmentsSubmit} className={styles.button}>Book now</button>
       </div>
       <div className={styles.reviews_container}>
       <h3 className={styles.reviews_title}>Review:</h3>

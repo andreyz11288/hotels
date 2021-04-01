@@ -38,10 +38,12 @@ const sendReviews = (id, credentials) => async (dispatch) => {
   }
   
 }  
-const bookApartments = (id, credentials) => async(dispatch) => {
+const bookApartments = (apartmentId, date) => async(dispatch) => {
+  
   dispatch(actions.bookApartmentsRequest())
   try{
-    const res = await axios.post('/orders', credentials);
+    
+    const res = await axios.post('/orders', {apartmentId, date});
     console.log(res);
     dispatch(actions.bookApartmentsSuccess(res.data));
   }
