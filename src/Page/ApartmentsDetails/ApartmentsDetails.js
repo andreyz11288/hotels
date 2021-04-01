@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import operations from '../../Redux/ApartmentsDetails/apartmentsDetailsOperation';
 import styles from '../ApartmentsDetails/ApartmentsDetails.module.scss';
 
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ApartmentsDetails(props) {
   const apartmentsById = useSelector(selectors.getApartmentsDetails);
@@ -26,6 +27,7 @@ export default function ApartmentsDetails(props) {
   const [name, setName] = useState('');
   const [content, setContent] = useState('');
   const [rating, setRating] = useState('');
+  const [checkBookBtn, setCheckBookBtn] = useState(false);
 
   const handleNameChange = (evt) => {
     setName(evt.target.value);
@@ -47,6 +49,7 @@ export default function ApartmentsDetails(props) {
   const bookApartmentsSubmit = () => {
     // evt.preventDefault();
     dispatch(operations.bookApartments(props.match.params.id, curDate))
+    setCheckBookBtn(true);
   }
 
 
@@ -57,7 +60,7 @@ export default function ApartmentsDetails(props) {
         {/* <Rating /> */}
         <img className={styles.img} src={apartmentsById.imgUrl} />
         <p>{apartmentsById.descr}</p>
-        <button type='button' onClick={bookApartmentsSubmit} className={styles.button}>Book now</button>
+        <button type='button' disabled={checkBookBtn} onClick={bookApartmentsSubmit} className={styles.button}>Book now</button>
       </div>
       <div className={styles.reviews_container}>
       <h3 className={styles.reviews_title}>Review:</h3>

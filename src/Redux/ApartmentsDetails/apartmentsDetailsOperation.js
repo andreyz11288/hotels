@@ -1,5 +1,30 @@
 import actions from './apartmetnsDetailsAction';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const notifyError = () =>
+  toast.error('🦄 Something was wrong', {
+    position: 'top-right',
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  const notifySuccess = () =>
+  toast.success('🦄 Thanks for your choice', {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
 
 // axios.defaults.baseURL = 'https://apt-booking-api.herokuapp.com';
 
@@ -20,9 +45,9 @@ const getApartmentsDetails = id => dispatch => {
       
       return dispatch(actions.getApartmentsDetailsSuccess(data));
     })
-    .catch(error =>
+    .catch(error => 
       dispatch(actions.getApartmentsDetailsError(error.message)),
-    );
+      notifyError());
 };
 
 const sendReviews = (id, credentials) => async (dispatch) => {
@@ -44,7 +69,7 @@ const bookApartments = (apartmentId, date) => async(dispatch) => {
   try{
     
     const res = await axios.post('/orders', {apartmentId, date});
-    console.log(res);
+    notifySuccess()
     dispatch(actions.bookApartmentsSuccess(res.data));
   }
   catch (error){
