@@ -3,8 +3,9 @@ import selectors from '../../Redux/ApartmentsDetails/apartmentDetailsSelector';
 import { useSelector, useDispatch } from 'react-redux';
 import operations from '../../Redux/ApartmentsDetails/apartmentsDetailsOperation';
 import styles from '../ApartmentsDetails/ApartmentsDetails.module.scss';
-
 import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function ApartmentsDetails(props) {
   const apartmentsById = useSelector(selectors.getApartmentsDetails);
