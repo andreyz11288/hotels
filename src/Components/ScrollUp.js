@@ -1,7 +1,7 @@
 
 import style from './ScrollUp.module.scss'
 import { useEffect, useState } from 'react';
-
+import sprite from '../utils/symbol-defs.svg';
 
 const ScrollUp = () => {
 
@@ -31,7 +31,11 @@ const ScrollUp = () => {
     return (
         
         state && <a className={style.scroll} href="#top"
-            onClick={ScrollUp}>&#8896;</a>        
+            onClick={ScrollUp}>
+                <svg className={style.scrollIcon}>
+                <use href={`${sprite}#icon-arrow-up`}></use>
+                </svg>
+            </a>        
     )    
 }
 export default ScrollUp
