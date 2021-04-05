@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import selectors from '../../Redux/Hotels/HotelsSelectors/hotelsSelectors';
 import operations from '../../Redux/Hotels/HotelsOperations/hotelsOperations';
+import { cabinetOperations } from '../../Redux/Cabinet';
 import HotelItem from './HotelsItem';
 import Filter from './Filter';
 import { TransitionGroup } from 'react-transition-group';
@@ -15,6 +16,8 @@ export default function Hotels() {
   useEffect(() => {
     const getApartments = () => dispatch(operations.getAllHotels());
     getApartments();
+
+    dispatch(cabinetOperations.fetchOrders());
   }, [dispatch]);
 
   return (
