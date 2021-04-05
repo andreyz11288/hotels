@@ -6,6 +6,7 @@ import styles from '../ApartmentsDetails/ApartmentsDetails.module.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 export default function ApartmentsDetails(props) {
   const apartmentsById = useSelector(selectors.getApartmentsDetails);
@@ -70,6 +71,11 @@ export default function ApartmentsDetails(props) {
   };
 
   return (
+    <CSSTransition in={true}
+    appear={true}
+    timeout={500}
+    classNames={styles}
+    unmountOnExit>
     <div className={styles.container}>
       <div className={styles.main_info}>
         <h2>{apartmentsById.title}</h2>
@@ -91,7 +97,7 @@ export default function ApartmentsDetails(props) {
         <Link to="/myCabinet" id="redirect-to-cabinet"></Link>
       </div>
       <div className={styles.reviews_container}>
-        <h3 className={styles.reviews_title}>Review:</h3>
+        <h3 className={styles.reviews_title}>Reviews:</h3>
 
         <ul className={styles.list}>
           {reviews &&
@@ -108,7 +114,7 @@ export default function ApartmentsDetails(props) {
             })}
         </ul>
 
-        <h3 className={styles.add_title}>ADD Reviews:</h3>
+        <h3 className={styles.add_title}>Add Review:</h3>
         <form onSubmit={handleSubmit}>
           <input
             className={styles.input}
@@ -141,5 +147,6 @@ export default function ApartmentsDetails(props) {
         </form>
       </div>
     </div>
+    </CSSTransition>
   );
 }

@@ -54,8 +54,7 @@ const sendReviews = (id, credentials) => async dispatch => {
       `/apartments/${id}/reviews`,
       credentials,
     );
-    notifySuccessReview();
-    console.log(res);
+    notifySuccessReview();    
     dispatch(actions.sendReviewsSuccess(res.data));
   } catch (error) {
     dispatch(actions.sendReviewsError(error.message));

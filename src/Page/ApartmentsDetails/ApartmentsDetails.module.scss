@@ -45,14 +45,17 @@
 
   & p {
     @extend %text-throw;
-
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
     line-height: 1.8;
     color: $little-text-color;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
+    
     @media screen and (min-width: 320px) {
       font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
     @media screen and (min-width: 768px) {
       font-size: 18px;
@@ -61,27 +64,30 @@
 }
 
 .img {
+  display: block;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .button {
   @extend %button-throw;
-  background-color: rgb(235, 240, 247);
-  width: 100%;
+  display: block;
   padding: 5px 10px;
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
   color: $text-color;
-  text-align: center;
+  transition: $animation-timing;
   border-radius: 2px;
   cursor: pointer;
   text-decoration: none;
-
-  &:hover {
-    background-color: rgb(79, 79, 226);
-    color: $white-color;
+  margin-left: auto;
+  margin-right: auto;
+  &:hover, &:focus {
+    transform: scale(1.02);    
+    background-color: $white-color;    
   }
 }
 
@@ -90,11 +96,13 @@
   color: $text-color;
   font-size: 20px;
   margin: 0;
+  text-align: center;
+  margin-bottom: 15px;
 }
 .list {
   @extend %list-throw;
   color: $text-color;
-  font: $nunito;
+  font-family: $nunito;
   margin-bottom: 20px;
 }
 .list_item {
@@ -111,23 +119,61 @@
 }
 
 .review_author {
-  font: $oldStandart;
-  font-weight: 500;
+  font-family: $oldStandart;
+  font-weight: 700;
   margin-bottom: 5px;
   margin-top: 0;
 }
 
 .add_title {
-  font-weight: 500;
+    font-style: italic;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .input {
   @extend %input-throw;
-  margin-bottom: 5px;
+  transition: $animation-timing;
+  border: 2px solid transparent;
+  @media screen and (min-width: 320px) {
+    margin-bottom: 10px;
+    padding: 10px 0px 10px 10px;   
+  }
+  
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 25px;
+  }
+  &:focus {
+    border: 2px solid $hover-color;
+  }
 }
 
 .textarea {
-  @extend %input-throw;
-  width: 100%;
-  margin-bottom: 5px;
+  @extend %input-throw;  
+  width: 100%;  
+  border: 2px solid transparent;
+  transition: $animation-timing;
+  @media screen and (min-width: 320px) {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 20px;
+    
+  }
+  &:focus {
+    border: 2px solid $hover-color;
+  }
+}
+.appear {
+  transform: translateY(-100%);
+  opacity: 0.1;
+}
+.appearActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 500ms ease-in;
 }
