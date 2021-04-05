@@ -1,22 +1,15 @@
-import {
-  Suspense,
-  lazy,
-   useEffect
-} from 'react';
-import {
-   useDispatch,
-  useSelector,
-} from 'react-redux';
+import { Suspense, lazy, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import AppBar from './Components/Loging/AppBar/AppBar';
-import Footer from './Components/Footer'
- import { getCurrentUser } from './Redux/Auth/authOperation';
+import Footer from './Components/Footer';
+import { getCurrentUser } from './Redux/Auth/authOperation';
 import PrivateRoute from './Routes/PrivateRoutes';
 import PublicRoute from './Routes/PublicRoutes';
 import s from './App.module.scss';
 import { getIsAutheticated } from './Redux/Auth/authSelectors';
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const HomePage = lazy(() =>
   import('./Page/HomePage/HomePage' /*webpackChunkName: "HomePage"*/),
@@ -47,17 +40,17 @@ const Apartments = lazy(() =>
 );
 const ApartmentsDetals = lazy(() =>
   import(
-    './Page/ApartmentsDetals/ApartmentsDetals' /*webpackChunkName: "ApartmentsDetals"*/
+    './Page/ApartmentsDetails/ApartmentsDetails' /*webpackChunkName: "ApartmentsDetals"*/
   ),
 );
 
 const App = ({ onRefresh }) => {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const isLogin = useSelector(getIsAutheticated);
 
-   useEffect(() => {
-     dispatch(getCurrentUser());
-   }, [dispatch, onRefresh]);
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch, onRefresh]);
 
   return (
     <>
@@ -65,9 +58,17 @@ const App = ({ onRefresh }) => {
         <AppBar />
       </header>
       <main>
-        <Suspense fallback={ <Loader className={s.suspenseMessage}          
-         type="Audio" color="#FFF" height={80} width={80}
-      />}>
+        <Suspense
+          fallback={
+            <Loader
+              className={s.suspenseMessage}
+              type="Audio"
+              color="#FFF"
+              height={80}
+              width={80}
+            />
+          }
+        >
           <Switch>
             <PublicRoute
               exact
@@ -75,7 +76,7 @@ const App = ({ onRefresh }) => {
               restricted
               redirectTo="/apartments"
               component={HomePage}
-            /> 
+            />
             <Route path="/team" component={Team} />
             <PrivateRoute
               path="/apartments/:id"
@@ -118,7 +119,7 @@ const App = ({ onRefresh }) => {
         </Suspense>
       </main>
       <footer>
-        < Footer />
+        <Footer />
       </footer>
     </>
   );

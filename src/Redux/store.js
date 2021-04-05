@@ -1,7 +1,8 @@
 import authReduser from './Auth/authReduser';
 import hotelsReducer from './Hotels/HotelsReducer/hotelsReducer';
+import apartmentsDetailsCombineReducer from '../Redux/ApartmentsDetails/apartmentDetailsReducer';
 import { cabinetReducer } from './Cabinet';
-import {bestHotelsReducer} from './BestHotels';
+import { bestHotelsReducer } from './BestHotels';
 import {
   configureStore,
   combineReducers,
@@ -44,6 +45,7 @@ const mainReducer = combineReducers({
   booking: hotelsReducer,
   orders: cabinetReducer,
   bestHotels: bestHotelsReducer,
+  apartmentsDetails: apartmentsDetailsCombineReducer,
 });
 
 const store = configureStore({
