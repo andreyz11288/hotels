@@ -136,6 +136,7 @@
   background-color: $little-text-color;
   border: 1px solid $white-color;
   border-radius: 2px;
+  transition: $animation-timing;
 
   &:hover,
   &:focus {
