@@ -1,15 +1,23 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import { getIsAutheticated } from '../../Redux/Auth/authSelectors';
 import s from './HomePage.module.scss';
 
 const HomePage = () => {
   const isLogin = useSelector(getIsAutheticated);
   return (
+    
     <section>
       <div className={s.bacground}></div>
       <div className={s.overley}></div>
-
+      <CSSTransition    
+    in={true}
+    appear={true}
+    timeout={500}
+    classNames={s}
+    unmountOnExit
+  >
       <div className={s.heroBlockText}>
         <p className={s.smallText}>
           ENJOY YOUR WONDERFUL HOLIDAYS WITH A GREAT LUXURY
@@ -32,6 +40,7 @@ const HomePage = () => {
           </div>
         )}
       </div>
+    </CSSTransition>
     </section>
   );
 };

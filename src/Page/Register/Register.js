@@ -30,7 +30,7 @@ const Register = () => {
   };
 
   return (
-    <>
+    <>    
       <div className={s.bacground}></div>
       <div className={s.overley}></div>
       <ToastContainer />
@@ -45,6 +45,13 @@ const Register = () => {
          type="Audio" color="#FFF" height={80} width={80}
       />
       </CSSTransition>
+      <CSSTransition    
+    in={true}
+    appear={true}
+    timeout={500}
+    classNames={s}
+    unmountOnExit
+  >
       <div className={s.containerBlockReg}>
         <h1 className={s.registerH1}>Registration</h1>
         <form className={s.registerForm} onSubmit={btnClick}>
@@ -89,6 +96,7 @@ const Register = () => {
           </button>
         </form>
       </div>
+      </CSSTransition>
     </>
   );
   // }

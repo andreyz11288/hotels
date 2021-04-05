@@ -124,3 +124,10 @@
     }
   }
 }
+.appear {  
+  opacity: 0.1;
+}
+.appearActive { 
+  opacity: 1;
+  transition: all 500ms ease-in;
+}

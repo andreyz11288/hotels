@@ -7,13 +7,20 @@ import Galya from '../../img/Travinska.jpg';
 import Andrey from '../../img/Zatochniy.jpg';
 import Dima from '../../img/Galochkin3.jpg';
 import sprite from '../../img/sprite.svg';
-
 import s from './Team.module.scss';
+import { CSSTransition } from 'react-transition-group';
 
 export default function Team() {
   return (
     <>
       <section className={s.team}>
+      <CSSTransition    
+    in={true}
+    appear={true}
+    timeout={500}
+    classNames={s}
+    unmountOnExit
+  >
         <ul className={s.teamList}>
           <li className={s.teamItem}>
             <div className={s.teamImgBlock}>
@@ -170,6 +177,7 @@ export default function Team() {
             </div>
           </li>
         </ul>
+        </CSSTransition>
       </section>
       <ScrollUp />
     </>

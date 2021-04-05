@@ -27,8 +27,7 @@ const Login = () => {
     setPassword('');
   };
 
-  return (
-    <section className={s.sectionLogin}>
+  return (<section className={s.sectionLogin}>
       <div className={s.bacground}></div>
       <div className={s.overley}></div>
       <ToastContainer />
@@ -43,6 +42,13 @@ const Login = () => {
       />
       
       </CSSTransition>
+      <CSSTransition    
+    in={true}
+    appear={true}
+    timeout={500}
+    classNames={s}
+    unmountOnExit
+  >
       <div className={s.containerLogin}>
         <h1 className={s.loginH1}>Login</h1>
         <form className={s.loginForm} onSubmit={btnClick}>
@@ -86,9 +92,10 @@ const Login = () => {
           </NavLink>
         </p>
       </div>
-    </section>
+      </CSSTransition>
+    </section>    
   );
-  // }
+ 
 };
 
 export default Login;
