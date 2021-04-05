@@ -23,10 +23,12 @@ export default function Filter() {
   const getAllCities = () => {
     setCities(selector);
     const section = document.querySelector('.Hotels_hotels__1SMbZ');
+    const mobileSection = document.querySelector('.Hotels_hotels__-nC7Q')
     const mediaQuery = window.matchMedia('(max-width: 767px)');
     if (mediaQuery.matches) {
       section.style.paddingTop = '200px';
-    }
+      mobileSection.style.paddingTop = '200px';
+    }    
   };
   const pushCity = evt => {
     setCity(evt.target.textContent);
