@@ -14,7 +14,7 @@ const notifyError = () =>
     progress: undefined,
   });
 
-  const notifySuccess = () =>
+const notifySuccess = () =>
   toast.success('🦄 Thanks for your choice', {
     position: 'top-right',
     autoClose: 5000,
@@ -25,58 +25,52 @@ const notifyError = () =>
     progress: undefined,
   });
 
+const notifySuccessReview = () =>
+  toast.success('🦄 Thanks for your review', {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
-// axios.defaults.baseURL = 'https://apt-booking-api.herokuapp.com';
-
-// const token = {
-//   set(token) {
-//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-//   },
-//   unset() {
-//     axios.defaults.headers.common.Authorization = "";
-//   },
-// };
-
-const getApartmentsDetails = id => dispatch => {
+const getApartmentsDetails = id => async dispatch => {
   dispatch(actions.getApartmentsDetailsRequest());
-  axios
-    .get(`/apartments/${id}`)
-    .then(({ data }) => {
-      
-      return dispatch(actions.getApartmentsDetailsSuccess(data));
-    })
-    .catch(error => 
-      dispatch(actions.getApartmentsDetailsError(error.message)),
-      notifyError());
+  try {
+    const res = await axios.get(`/apartments/${id}`);
+    dispatch(actions.getApartmentsDetailsSuccess(res.data));
+  } catch (error) {
+    notifyError();
+    dispatch(actions.getApartmentsDetailsError(error.message));
+  }
 };
 
-const sendReviews = (id, credentials) => async (dispatch) => {
-  dispatch(actions.sendReviewsRequest())
+const sendReviews = (id, credentials) => async dispatch => {
+  dispatch(actions.sendReviewsRequest());
   try {
-    const res = await axios.post(`/apartments/${id}/reviews`, credentials);
-    // token.set(res.data.token);
+    const res = await axios.post(
+      `/apartments/${id}/reviews`,
+      credentials,
+    );
+    notifySuccessReview();
     console.log(res);
     dispatch(actions.sendReviewsSuccess(res.data));
-
   } catch (error) {
     dispatch(actions.sendReviewsError(error.message));
   }
-  
-}  
-const bookApartments = (apartmentId, date) => async(dispatch) => {
-  
-  dispatch(actions.bookApartmentsRequest())
-  try{
-    
-    const res = await axios.post('/orders', {apartmentId, date});
-    notifySuccess()
+};
+const bookApartments = (apartmentId, date) => async dispatch => {
+  dispatch(actions.bookApartmentsRequest());
+  try {
+    const res = await axios.post('/orders', { apartmentId, date });
+    notifySuccess();
     dispatch(actions.bookApartmentsSuccess(res.data));
+  } catch (error) {
+    dispatch(actions.bookApartmentsError(error.message));
   }
-  catch (error){
-dispatch(actions.bookApartmentsError(error.message));
-  }
-}
-  
+};
 
 const apartmentsDetailsOperations = {
   getApartmentsDetails,
