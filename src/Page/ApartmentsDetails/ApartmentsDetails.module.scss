@@ -171,12 +171,10 @@
     border: 2px solid $hover-color;
   }
 }
-.appear {
-  transform: translateY(-100%);
+.appear {  
   opacity: 0.1;
 }
-.appearActive {
-  transform: translateY(0);
+.appearActive { 
   opacity: 1;
   transition: all 500ms ease-in;
 }
