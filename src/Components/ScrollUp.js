@@ -33,7 +33,7 @@ const ScrollUp = () => {
         state && <a className={style.scroll} href="#top"
             onClick={ScrollUp}>
                 <svg className={style.scrollIcon}>
-                <use href={`${sprite}#icon-arrow-up`}></use>
+                <use href={`${sprite}#icon-circle-up`}></use>
                 </svg>
             </a>        
     )    
