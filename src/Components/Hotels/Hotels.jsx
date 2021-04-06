@@ -21,7 +21,7 @@ export default function Hotels() {
   }, [dispatch]);
 
   return (
-    <section className={styles.hotels}>
+    <section id='section' className={styles.hotels}>
       <ToastContainer />
       <Filter apartments={apartments} />
       <TransitionGroup component="ul" className={styles.hotelsList}>
