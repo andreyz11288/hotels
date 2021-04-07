@@ -2,8 +2,6 @@ import axios from 'axios';
 import cabinetActions from './cabinet-actions';
 import { toast } from 'react-toastify';
 
-// axios.defaults.baseURL = 'https://apt-booking-api.herokuapp.com';
-
 const notify = () =>
   toast.error('🦄 Your order has been deleted!', {
     position: 'top-right',
