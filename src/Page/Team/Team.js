@@ -80,7 +80,7 @@ export default function Team() {
               <p className={s.teamDescription}>- registration</p>
               <p className={s.teamDescription}>- log in</p>
               <a
-                href="https://www.linkedin.com/in/андрей-заточный-37ba46120"
+                href="https://www.linkedin.com/in/andrii-zatochniy"
                 target="blank"
               >
                 <svg className={s.teamIcon}>
